@@ -26,12 +26,17 @@ export function About() {
     <section
       id="apropos"
       style={{
-        background: "#0d1526",
+        backgroundImage: "url('/image-fond-3.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundColor: "#0d1526",
         padding: "100px 24px",
         borderTop: "1px solid rgba(0,212,255,0.1)",
         position: "relative",
       }}
     >
+      {/* Overlay */}
+      <div style={{ position: "absolute", inset: 0, background: "rgba(5, 8, 20, 0.70)", pointerEvents: "none" }} />
       <div
         ref={ref}
         style={{
