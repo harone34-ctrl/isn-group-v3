@@ -281,7 +281,11 @@ export function Hero() {
         {/* Sous-titre */}
         <p
           style={{
-            color: "#ffffff",
+            background: "rgba(26, 18, 8, 0.80)",
+            border: "1px solid #f59e0b",
+            borderRadius: "100px",
+            padding: "12px 28px",
+            color: "#f59e0b",
             fontSize: "14px",
             lineHeight: 1.7,
             maxWidth: "680px",
@@ -289,6 +293,7 @@ export function Hero() {
             fontWeight: 700,
             textTransform: "uppercase",
             letterSpacing: "1px",
+            display: "inline-block",
           }}
         >
           Support informatique, infogérance MSP et architecture réseau
