@@ -69,12 +69,12 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
       onMouseLeave={() => setHovered(false)}
       style={{
         background: "#0d1526",
-        border: hovered ? "1px solid #00d4ff" : "1px solid rgba(255,255,255,0.06)",
+        border: hovered ? "1px solid #f59e0b" : "1px solid rgba(255,255,255,0.06)",
         borderRadius: "6px",
         padding: "16px 28px 36px",
         transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)",
         cursor: "default",
-        boxShadow: hovered ? "0 0 28px rgba(0,212,255,0.18), inset 0 0 0 1px rgba(0,212,255,0.1)" : "none",
+        boxShadow: hovered ? "0 0 28px rgba(245,158,11,0.18), inset 0 0 0 1px rgba(245,158,11,0.1)" : "none",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(28px)",
         transitionDelay: `${index * 80}ms`,
@@ -88,13 +88,13 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
         style={{
           width: 56,
           height: 56,
-          background: hovered ? "rgba(0,212,255,0.15)" : "rgba(0,212,255,0.08)",
+          background: "#1a1208",
           border: "1px solid rgba(0,212,255,0.25)",
           borderRadius: "4px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "#00d4ff",
+          color: "#f59e0b",
           transition: "all 0.3s",
         }}
       >
@@ -116,7 +116,7 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
         </h3>
         <p
           style={{
-            color: "rgba(255,255,255,0.55)",
+            color: "rgba(255,255,255,0.80)",
             fontSize: "15px",
             lineHeight: 1.7,
             fontWeight: 300,
