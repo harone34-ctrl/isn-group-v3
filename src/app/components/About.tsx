@@ -89,10 +89,11 @@ export function About() {
 
           <p
             style={{
-              color: "rgba(255,255,255,0.6)",
+              color: "#ffffff",
               fontSize: "15px",
               lineHeight: 1.8,
-              fontWeight: 300,
+              fontWeight: 400,
+              textShadow: "0 1px 3px rgba(0,0,0,0.8)",
               marginBottom: "32px",
             }}
           >
@@ -111,8 +112,8 @@ export function About() {
                   display: "flex",
                   alignItems: "flex-start",
                   gap: "12px",
-                  color: "rgba(255,255,255,0.75)",
-                  fontSize: "14px",
+                  color: "#ffffff",
+                  fontSize: "16px",
                   lineHeight: 1.5,
                 }}
               >
