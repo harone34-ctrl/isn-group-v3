@@ -1,7 +1,15 @@
-import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const TYPING_WORDS = ["Je répare", "Je configure", "Je sécurise", "Je déploie", "Je protège"];
+const TICKER_WORDS = [
+  "JE RÉPARE",
+  "JE CONFIGURE",
+  "JE SÉCURISE",
+  "JE PROTÈGE",
+  "JE DÉPANNE",
+  "JE CONNECTE",
+];
+
+const TICKER_ITEMS = [...TICKER_WORDS, ...TICKER_WORDS, ...TICKER_WORDS];
 
 const LOGOS = [
   { name: "Microsoft", color: "#00a4ef" },
@@ -21,34 +29,6 @@ const LOGOS = [
 const DOUBLED = [...LOGOS, ...LOGOS];
 
 export function Hero() {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [displayed, setDisplayed] = useState("");
-  const [phase, setPhase] = useState<"typing" | "pause" | "erasing">("typing");
-
-  useEffect(() => {
-    const word = TYPING_WORDS[wordIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (phase === "typing") {
-      if (displayed.length < word.length) {
-        timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 80);
-      } else {
-        timeout = setTimeout(() => setPhase("pause"), 1800);
-      }
-    } else if (phase === "pause") {
-      timeout = setTimeout(() => setPhase("erasing"), 400);
-    } else {
-      if (displayed.length > 0) {
-        timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 50);
-      } else {
-        setWordIndex((i) => (i + 1) % TYPING_WORDS.length);
-        setPhase("typing");
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayed, phase, wordIndex]);
-
   return (
     <section
       id="accueil"
@@ -56,11 +36,10 @@ export function Hero() {
         minHeight: "100vh",
         background: "#0a0a0a",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        flexDirection: "column",
         position: "relative",
         overflow: "hidden",
-        paddingTop: "120px",
+        paddingTop: "92px",
       }}
     >
       {/* Background — datacenter */}
@@ -103,15 +82,60 @@ export function Hero() {
         }}
       />
 
-      {/* Content */}
+      {/* ── Ticker pleine largeur ── */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 3,
+          width: "100%",
+          background: "rgba(10,10,10,0.6)",
+          borderBottom: "1px solid rgba(230,57,70,0.25)",
+          backdropFilter: "blur(8px)",
+          overflow: "hidden",
+          padding: "10px 0",
+          flexShrink: 0,
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: "0",
+            animation: "ticker-scroll 22s linear infinite",
+            width: "max-content",
+          }}
+        >
+          {TICKER_ITEMS.map((word, i) => (
+            <span
+              key={i}
+              style={{
+                color: "#e63946",
+                fontSize: "clamp(13px, 1.6vw, 17px)",
+                fontWeight: 800,
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+                whiteSpace: "nowrap",
+                paddingRight: "36px",
+              }}
+            >
+              {word}
+              <span style={{ marginLeft: "36px", opacity: 0.5 }}>•</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Contenu centré ── */}
       <div
         style={{
           position: "relative",
           zIndex: 2,
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
           textAlign: "center",
-          maxWidth: "900px",
-          width: "100%",
-          padding: "0 24px",
+          padding: "40px 24px 80px",
         }}
       >
         {/* Badge */}
@@ -127,62 +151,59 @@ export function Hero() {
             marginBottom: "32px",
           }}
         >
-          <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#e63946", animation: "pulse-dot 1.5s infinite" }} />
-          <span style={{ color: "#e63946", fontSize: "12px", letterSpacing: "2px", textTransform: "uppercase", fontWeight: 600 }}>
+          <div
+            style={{
+              width: 6,
+              height: 6,
+              borderRadius: "50%",
+              background: "#e63946",
+              animation: "pulse-dot 1.5s infinite",
+            }}
+          />
+          <span
+            style={{
+              color: "#e63946",
+              fontSize: "12px",
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
             Support Informatique Professionnel
           </span>
         </div>
 
-        {/* Typing animation */}
-        <div
-          style={{
-            height: "52px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: "16px",
-          }}
-        >
-          <span
-            style={{
-              color: "#e63946",
-              fontSize: "clamp(28px, 5vw, 48px)",
-              fontWeight: 800,
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              fontFamily: "monospace",
-            }}
-          >
-            {displayed}
-            <span style={{ borderRight: "3px solid #e63946", marginLeft: "2px", animation: "blink 0.8s step-end infinite" }} />
-          </span>
-        </div>
-
-        {/* Logo strip — défilant */}
+        {/* Logo strip */}
         <div
           style={{
             position: "relative",
             overflow: "hidden",
-            marginBottom: "28px",
+            marginBottom: "32px",
             borderTop: "1px solid rgba(255,255,255,0.08)",
             borderBottom: "1px solid rgba(255,255,255,0.08)",
             padding: "12px 0",
+            width: "100%",
+            maxWidth: "860px",
           }}
         >
-          {/* Fade left */}
           <div style={{
             position: "absolute", left: 0, top: 0, bottom: 0, width: "80px",
             background: "linear-gradient(to right, rgba(10,10,10,0.9), transparent)",
             zIndex: 2, pointerEvents: "none",
           }} />
-          {/* Fade right */}
           <div style={{
             position: "absolute", right: 0, top: 0, bottom: 0, width: "80px",
             background: "linear-gradient(to left, rgba(10,10,10,0.9), transparent)",
             zIndex: 2, pointerEvents: "none",
           }} />
-
-          <div style={{ display: "flex", gap: "36px", animation: "hero-marquee 28s linear infinite", width: "max-content" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "36px",
+              animation: "hero-marquee 28s linear infinite",
+              width: "max-content",
+            }}
+          >
             {DOUBLED.map((logo, i) => (
               <div
                 key={i}
@@ -194,8 +215,24 @@ export function Hero() {
                   opacity: 0.6,
                 }}
               >
-                <div style={{ width: 7, height: 7, borderRadius: "50%", background: logo.color, flexShrink: 0 }} />
-                <span style={{ color: "#ffffff", fontSize: "12px", fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase" }}>
+                <div
+                  style={{
+                    width: 7,
+                    height: 7,
+                    borderRadius: "50%",
+                    background: logo.color,
+                    flexShrink: 0,
+                  }}
+                />
+                <span
+                  style={{
+                    color: "#ffffff",
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    letterSpacing: "1.5px",
+                    textTransform: "uppercase",
+                  }}
+                >
                   {logo.name}
                 </span>
               </div>
@@ -203,7 +240,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Main title */}
+        {/* Titre principal */}
         <h1
           style={{
             color: "#ffffff",
@@ -220,7 +257,7 @@ export function Hero() {
           <span style={{ color: "#e63946" }}>à Votre Service</span>
         </h1>
 
-        {/* Subtitle */}
+        {/* Sous-titre */}
         <p
           style={{
             color: "rgba(255,255,255,0.6)",
@@ -236,7 +273,7 @@ export function Hero() {
           pour entreprises et professionnels
         </p>
 
-        {/* CTA buttons */}
+        {/* CTA */}
         <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
           <a
             href="#contact"
@@ -255,13 +292,13 @@ export function Hero() {
               boxShadow: "0 0 30px rgba(230,57,70,0.4)",
             }}
             onMouseEnter={(e) => {
-              const el = e.target as HTMLAnchorElement;
+              const el = e.currentTarget;
               el.style.background = "#c0392b";
               el.style.transform = "translateY(-2px)";
               el.style.boxShadow = "0 0 40px rgba(230,57,70,0.6)";
             }}
             onMouseLeave={(e) => {
-              const el = e.target as HTMLAnchorElement;
+              const el = e.currentTarget;
               el.style.background = "#e63946";
               el.style.transform = "translateY(0)";
               el.style.boxShadow = "0 0 30px rgba(230,57,70,0.4)";
@@ -286,13 +323,13 @@ export function Hero() {
               display: "inline-block",
             }}
             onMouseEnter={(e) => {
-              const el = e.target as HTMLAnchorElement;
+              const el = e.currentTarget;
               el.style.borderColor = "#e63946";
               el.style.color = "#e63946";
               el.style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {
-              const el = e.target as HTMLAnchorElement;
+              const el = e.currentTarget;
               el.style.borderColor = "rgba(255,255,255,0.4)";
               el.style.color = "#fff";
               el.style.transform = "translateY(0)";
@@ -308,7 +345,7 @@ export function Hero() {
         href="#services"
         style={{
           position: "absolute",
-          bottom: "32px",
+          bottom: "28px",
           left: "50%",
           transform: "translateX(-50%)",
           color: "rgba(255,255,255,0.3)",
@@ -320,6 +357,7 @@ export function Hero() {
           fontSize: "11px",
           letterSpacing: "2px",
           textTransform: "uppercase",
+          zIndex: 3,
           animation: "bounce-arrow 2s infinite",
         }}
       >
@@ -328,21 +366,21 @@ export function Hero() {
       </a>
 
       <style>{`
-        @keyframes hero-marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+        @keyframes ticker-scroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-33.333%); }
         }
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
+        @keyframes hero-marquee {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
         @keyframes pulse-dot {
           0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(1.3); }
+          50%       { opacity: 0.5; transform: scale(1.3); }
         }
         @keyframes bounce-arrow {
           0%, 100% { transform: translateX(-50%) translateY(0); }
-          50% { transform: translateX(-50%) translateY(6px); }
+          50%       { transform: translateX(-50%) translateY(6px); }
         }
       `}</style>
     </section>
