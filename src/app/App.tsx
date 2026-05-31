@@ -1,6 +1,5 @@
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { PartnerLogos } from "./components/PartnerLogos";
 import { KeyFigures } from "./components/KeyFigures";
 import { HardwareGallery } from "./components/HardwareGallery";
 import { Services } from "./components/Services";
@@ -22,7 +21,6 @@ export default function App() {
     >
       <Header />
       <Hero />
-      <PartnerLogos />
       <KeyFigures />
       <HardwareGallery />
       <Services />

@@ -3,6 +3,23 @@ import { ChevronDown } from "lucide-react";
 
 const TYPING_WORDS = ["Je répare", "Je configure", "Je sécurise", "Je déploie", "Je protège"];
 
+const LOGOS = [
+  { name: "Microsoft", color: "#00a4ef" },
+  { name: "Linux", color: "#fcc624" },
+  { name: "Cisco", color: "#1ba0d7" },
+  { name: "VMware", color: "#607078" },
+  { name: "Veeam", color: "#00b336" },
+  { name: "Kaspersky", color: "#006d5c" },
+  { name: "Proxmox", color: "#e57000" },
+  { name: "Debian", color: "#d70a53" },
+  { name: "Ubuntu", color: "#e95420" },
+  { name: "OVHcloud", color: "#123f6d" },
+  { name: "Acronis", color: "#ef4923" },
+  { name: "Citrix", color: "#452170" },
+];
+
+const DOUBLED = [...LOGOS, ...LOGOS];
+
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
@@ -46,7 +63,7 @@ export function Hero() {
         paddingTop: "120px",
       }}
     >
-      {/* Real Unsplash background — dark cable network / data center */}
+      {/* Background — datacenter */}
       <img
         src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
         alt="Data center server cables"
@@ -62,7 +79,7 @@ export function Hero() {
         }}
       />
 
-      {/* Dark overlay gradient */}
+      {/* Overlay */}
       <div
         style={{
           position: "absolute",
@@ -72,7 +89,7 @@ export function Hero() {
         }}
       />
 
-      {/* Radial red glow center */}
+      {/* Radial red glow */}
       <div
         style={{
           position: "absolute",
@@ -86,73 +103,17 @@ export function Hero() {
         }}
       />
 
-      {/* Server rack photo — right side accent */}
-      <div
-        style={{
-          position: "absolute",
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: "38%",
-          overflow: "hidden",
-          pointerEvents: "none",
-        }}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1698668975271-2ba9a323be6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800"
-          alt="Server rack"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "left center",
-            opacity: 0.12,
-            filter: "saturate(0.2) brightness(0.5)",
-            maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.6) 100%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.6) 100%)",
-          }}
-        />
-      </div>
-
+      {/* Content */}
       <div
         style={{
           position: "relative",
           zIndex: 2,
-          maxWidth: "1200px",
+          textAlign: "center",
+          maxWidth: "900px",
           width: "100%",
           padding: "0 24px",
-          display: "flex",
-          alignItems: "center",
-          gap: "64px",
         }}
       >
-        {/* Image desktop — droite */}
-        <div
-          className="hero-image-col"
-          style={{
-            flexShrink: 0,
-            width: "380px",
-            order: 2,
-          }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600"
-            alt="Serveur datacenter professionnel"
-            style={{
-              width: "100%",
-              height: "400px",
-              objectFit: "cover",
-              objectPosition: "center",
-              borderRadius: "12px",
-              border: "2px solid #e63946",
-              boxShadow: "0 0 40px rgba(230,57,70,0.45), 0 0 80px rgba(230,57,70,0.15)",
-              display: "block",
-            }}
-          />
-        </div>
-
-        {/* Texte — gauche */}
-        <div style={{ flex: 1, textAlign: "center", order: 1 }}>
         {/* Badge */}
         <div
           style={{
@@ -197,6 +158,51 @@ export function Hero() {
           </span>
         </div>
 
+        {/* Logo strip — défilant */}
+        <div
+          style={{
+            position: "relative",
+            overflow: "hidden",
+            marginBottom: "28px",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            borderBottom: "1px solid rgba(255,255,255,0.08)",
+            padding: "12px 0",
+          }}
+        >
+          {/* Fade left */}
+          <div style={{
+            position: "absolute", left: 0, top: 0, bottom: 0, width: "80px",
+            background: "linear-gradient(to right, rgba(10,10,10,0.9), transparent)",
+            zIndex: 2, pointerEvents: "none",
+          }} />
+          {/* Fade right */}
+          <div style={{
+            position: "absolute", right: 0, top: 0, bottom: 0, width: "80px",
+            background: "linear-gradient(to left, rgba(10,10,10,0.9), transparent)",
+            zIndex: 2, pointerEvents: "none",
+          }} />
+
+          <div style={{ display: "flex", gap: "36px", animation: "hero-marquee 28s linear infinite", width: "max-content" }}>
+            {DOUBLED.map((logo, i) => (
+              <div
+                key={i}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "7px",
+                  whiteSpace: "nowrap",
+                  opacity: 0.6,
+                }}
+              >
+                <div style={{ width: 7, height: 7, borderRadius: "50%", background: logo.color, flexShrink: 0 }} />
+                <span style={{ color: "#ffffff", fontSize: "12px", fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase" }}>
+                  {logo.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Main title */}
         <h1
           style={{
@@ -231,7 +237,7 @@ export function Hero() {
         </p>
 
         {/* CTA buttons */}
-        <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap", order: 1 }}>
+        <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
           <a
             href="#contact"
             style={{
@@ -295,12 +301,11 @@ export function Hero() {
             Découvrir nos services
           </a>
         </div>
-        </div>{/* fin texte */}
       </div>
 
       {/* Scroll indicator */}
       <a
-        href="#partenaires"
+        href="#services"
         style={{
           position: "absolute",
           bottom: "32px",
@@ -323,8 +328,9 @@ export function Hero() {
       </a>
 
       <style>{`
-        @media (max-width: 900px) {
-          .hero-image-col { display: none !important; }
+        @keyframes hero-marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
         @keyframes blink {
           0%, 100% { opacity: 1; }
@@ -342,4 +348,3 @@ export function Hero() {
     </section>
   );
 }
-
