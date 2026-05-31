@@ -12,18 +12,54 @@ const TICKER_WORDS = [
 const TICKER_ITEMS = [...TICKER_WORDS, ...TICKER_WORDS, ...TICKER_WORDS];
 
 const LOGOS = [
-  { name: "Microsoft", color: "#00a4ef" },
-  { name: "Linux", color: "#fcc624" },
-  { name: "Cisco", color: "#1ba0d7" },
-  { name: "VMware", color: "#607078" },
-  { name: "Veeam", color: "#00b336" },
-  { name: "Kaspersky", color: "#006d5c" },
-  { name: "Proxmox", color: "#e57000" },
-  { name: "Debian", color: "#d70a53" },
-  { name: "Ubuntu", color: "#e95420" },
-  { name: "OVHcloud", color: "#123f6d" },
-  { name: "Acronis", color: "#ef4923" },
-  { name: "Citrix", color: "#452170" },
+  {
+    name: "Microsoft",
+    svg: <svg viewBox="0 0 21 21" width="24" height="24" fill="none"><rect x="0" y="0" width="10" height="10" fill="#f25022"/><rect x="11" y="0" width="10" height="10" fill="#7fba00"/><rect x="0" y="11" width="10" height="10" fill="#00a4ef"/><rect x="11" y="11" width="10" height="10" fill="#ffb900"/></svg>,
+  },
+  {
+    name: "Linux",
+    svg: <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="#fcc624" strokeWidth="2"/><path d="M8 9h8M8 12h5" stroke="#fcc624" strokeWidth="2" strokeLinecap="round"/><circle cx="9" cy="15" r="1.5" fill="#fcc624"/><circle cx="15" cy="15" r="1.5" fill="#fcc624"/></svg>,
+  },
+  {
+    name: "Cisco",
+    svg: <svg viewBox="0 0 32 16" width="32" height="24" fill="none"><rect x="0" y="4" width="4" height="8" rx="2" fill="#1ba0d7"/><rect x="6" y="2" width="4" height="12" rx="2" fill="#1ba0d7"/><rect x="12" y="0" width="4" height="16" rx="2" fill="#1ba0d7"/><rect x="18" y="2" width="4" height="12" rx="2" fill="#1ba0d7"/><rect x="24" y="4" width="4" height="8" rx="2" fill="#1ba0d7"/></svg>,
+  },
+  {
+    name: "VMware",
+    svg: <svg viewBox="0 0 28 16" width="28" height="24" fill="none"><path d="M2 2L7 14L12 2H10L7 10L4 2H2Z" fill="#607078"/><path d="M13 2L18 14L23 2H21L18 10L15 2H13Z" fill="#607078"/><rect x="24" y="2" width="3" height="12" rx="1.5" fill="#607078"/></svg>,
+  },
+  {
+    name: "Veeam",
+    svg: <svg viewBox="0 0 20 20" width="24" height="24" fill="none"><polygon points="10,2 18,10 10,18 2,10" fill="none" stroke="#00b336" strokeWidth="2"/><polygon points="10,5 15,10 10,15 5,10" fill="#00b336"/></svg>,
+  },
+  {
+    name: "Kaspersky",
+    svg: <svg viewBox="0 0 24 24" width="24" height="24" fill="none"><circle cx="12" cy="12" r="10" fill="none" stroke="#006d5c" strokeWidth="2"/><path d="M8 7L12 12L8 17" stroke="#006d5c" strokeWidth="2.5" strokeLinecap="round"/><path d="M12 12L17 12" stroke="#006d5c" strokeWidth="2.5" strokeLinecap="round"/></svg>,
+  },
+  {
+    name: "Proxmox",
+    svg: <svg viewBox="0 0 24 24" width="24" height="24" fill="none"><path d="M12 2L22 7V17L12 22L2 17V7L12 2Z" fill="none" stroke="#e57000" strokeWidth="2"/><path d="M12 6L18 9.5V16.5L12 20L6 16.5V9.5L12 6Z" fill="#e57000"/></svg>,
+  },
+  {
+    name: "Debian",
+    svg: <svg viewBox="0 0 24 24" width="24" height="24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.5 0 2.93-.33 4.2-.92C13.93 20.36 11 17.44 11 14c0-3.31 2.69-6 6-6 .34 0 .68.03 1 .08C17.5 4.5 14.97 2 12 2z" fill="#d70a53"/><circle cx="17" cy="14" r="4" fill="none" stroke="#d70a53" strokeWidth="2"/></svg>,
+  },
+  {
+    name: "Ubuntu",
+    svg: <svg viewBox="0 0 24 24" width="24" height="24" fill="none"><circle cx="12" cy="12" r="10" fill="none" stroke="#e95420" strokeWidth="2"/><circle cx="12" cy="5" r="2.5" fill="#e95420"/><circle cx="4.9" cy="16.5" r="2.5" fill="#e95420"/><circle cx="19.1" cy="16.5" r="2.5" fill="#e95420"/><path d="M12 7.5L5.5 15M12 7.5L18.5 15" stroke="#e95420" strokeWidth="1.5"/></svg>,
+  },
+  {
+    name: "OVHcloud",
+    svg: <svg viewBox="0 0 30 20" width="30" height="24" fill="none"><path d="M5 10C5 6.69 7.69 4 11 4s6 2.69 6 6-2.69 6-6 6S5 13.31 5 10Z" fill="none" stroke="#123f6d" strokeWidth="2"/><path d="M14 10C14 6.69 16.69 4 20 4s6 2.69 6 6-2.69 6-6 6" stroke="#123f6d" strokeWidth="2" strokeLinecap="round"/></svg>,
+  },
+  {
+    name: "Acronis",
+    svg: <svg viewBox="0 0 24 24" width="24" height="24" fill="none"><path d="M12 2L22 20H2L12 2Z" fill="none" stroke="#ef4923" strokeWidth="2"/><path d="M12 8L17 18H7L12 8Z" fill="#ef4923"/></svg>,
+  },
+  {
+    name: "Citrix",
+    svg: <svg viewBox="0 0 24 24" width="24" height="24" fill="none"><circle cx="12" cy="12" r="10" fill="none" stroke="#452170" strokeWidth="2"/><path d="M8 9h8M8 12h8M8 15h8" stroke="#452170" strokeWidth="2" strokeLinecap="round"/></svg>,
+  },
 ];
 
 const DOUBLED = [...LOGOS, ...LOGOS];
@@ -92,7 +128,7 @@ export function Hero() {
           borderBottom: "1px solid rgba(255,255,255,0.08)",
           backdropFilter: "blur(8px)",
           overflow: "hidden",
-          padding: "12px 0",
+          padding: "16px 0",
           flexShrink: 0,
         }}
       >
@@ -120,13 +156,14 @@ export function Hero() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "7px",
+                gap: "10px",
                 whiteSpace: "nowrap",
-                opacity: 0.7,
+                opacity: 0.75,
+                flexShrink: 0,
               }}
             >
-              <div style={{ width: 7, height: 7, borderRadius: "50%", background: logo.color, flexShrink: 0 }} />
-              <span style={{ color: "#ffffff", fontSize: "12px", fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase" }}>
+              {logo.svg}
+              <span style={{ color: "#ffffff", fontSize: "16px", fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase" }}>
                 {logo.name}
               </span>
             </div>
@@ -192,7 +229,7 @@ export function Hero() {
             borderTop: "1px solid rgba(230,57,70,0.2)",
             borderBottom: "1px solid rgba(230,57,70,0.2)",
             padding: "12px 0",
-            width: "60%",
+            width: "25%",
           }}
         >
           <div style={{
@@ -217,7 +254,7 @@ export function Hero() {
                 key={i}
                 style={{
                   color: "#e63946",
-                  fontSize: "12px",
+                  fontSize: "15px",
                   fontWeight: 800,
                   letterSpacing: "3px",
                   textTransform: "uppercase",
