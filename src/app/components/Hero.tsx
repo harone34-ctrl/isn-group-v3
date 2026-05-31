@@ -70,7 +70,7 @@ export function Hero() {
       id="accueil"
       style={{
         minHeight: "100vh",
-        backgroundImage: "url('/imgfd1.png')",
+        backgroundImage: "url('/imgfd2.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
