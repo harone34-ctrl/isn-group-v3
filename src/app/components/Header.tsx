@@ -34,19 +34,19 @@ export function Header() {
       >
         <a
           href="tel:0767804247"
-          style={{ color: "#fff", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", fontSize: "13px" }}
+          style={{ color: "#0a0f1e", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", fontSize: "13px" }}
         >
           <Phone size={13} />
           07 67 80 42 47
         </a>
         <a
           href="mailto:contact@isngroup.fr"
-          style={{ color: "#fff", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", fontSize: "13px" }}
+          style={{ color: "#0a0f1e", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", fontSize: "13px" }}
         >
           <Mail size={13} />
           contact@isngroup.fr
         </a>
-        <span style={{ color: "#fff", display: "flex", alignItems: "center", gap: "6px", fontSize: "13px" }}>
+        <span style={{ color: "#0a0f1e", display: "flex", alignItems: "center", gap: "6px", fontSize: "13px" }}>
           <Clock size={13} />
           Lun–Ven 9h–18h
         </span>
@@ -136,7 +136,7 @@ export function Header() {
               href="#contact"
               style={{
                 background: "#00d4ff",
-                color: "#fff",
+                color: "#0a0f1e",
                 textDecoration: "none",
                 padding: "10px 20px",
                 fontSize: "13px",
@@ -215,7 +215,7 @@ export function Header() {
             onClick={() => setMobileOpen(false)}
             style={{
               background: "#00d4ff",
-              color: "#fff",
+              color: "#0a0f1e",
               textDecoration: "none",
               padding: "12px 20px",
               fontSize: "13px",

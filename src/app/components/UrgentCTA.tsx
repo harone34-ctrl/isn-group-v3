@@ -4,7 +4,9 @@ export function UrgentCTA() {
   return (
     <section
       style={{
-        background: "linear-gradient(135deg, #0099cc 0%, #00d4ff 50%, #0099cc 100%)",
+        background: "linear-gradient(135deg, #0d1526 0%, #0a2a4a 50%, #0d1526 100%)",
+        borderTop: "1px solid #00d4ff",
+        borderBottom: "1px solid #00d4ff",
         padding: "64px 24px",
         position: "relative",
         overflow: "hidden",
