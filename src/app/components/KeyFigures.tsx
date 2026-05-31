@@ -111,7 +111,7 @@ export function KeyFigures() {
         style={{
           position: "absolute",
           inset: 0,
-          background: "rgba(5, 10, 25, 0.65)",
+          background: "rgba(5, 10, 25, 0.35)",
           pointerEvents: "none",
         }}
       />
