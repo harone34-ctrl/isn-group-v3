@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 
 const PHOTOS = [
   {
@@ -39,7 +39,7 @@ export function HardwareGallery() {
   return (
     <section
       style={{
-        background: "#111111",
+        background: "#111d35",
         padding: "0",
         overflow: "hidden",
       }}
@@ -93,7 +93,7 @@ export function HardwareGallery() {
               style={{
                 position: "absolute",
                 inset: 0,
-                background: "linear-gradient(180deg, transparent 40%, rgba(10,10,10,0.8) 100%)",
+                background: "linear-gradient(180deg, transparent 40%, rgba(10,15,30,0.8) 100%)",
                 pointerEvents: "none",
               }}
             />
@@ -107,7 +107,7 @@ export function HardwareGallery() {
                   right: 0,
                   bottom: 0,
                   width: "1px",
-                  background: "rgba(230,57,70,0.2)",
+                  background: "rgba(0,212,255,0.2)",
                 }}
               />
             )}
@@ -126,7 +126,7 @@ export function HardwareGallery() {
                 style={{
                   width: "24px",
                   height: "2px",
-                  background: "#e63946",
+                  background: "#00d4ff",
                   marginBottom: "8px",
                 }}
               />

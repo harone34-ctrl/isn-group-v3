@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { Star, Quote } from "lucide-react";
 
 const TESTIMONIALS = [
@@ -44,9 +44,9 @@ export function Testimonials() {
   return (
     <section
       style={{
-        background: "#111111",
+        background: "#111d35",
         padding: "100px 24px",
-        borderTop: "1px solid rgba(230,57,70,0.1)",
+        borderTop: "1px solid rgba(0,212,255,0.1)",
       }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -54,7 +54,7 @@ export function Testimonials() {
         <div style={{ textAlign: "center", marginBottom: "64px" }}>
           <div
             style={{
-              color: "#e63946",
+              color: "#00d4ff",
               fontSize: "11px",
               letterSpacing: "4px",
               textTransform: "uppercase",
@@ -74,7 +74,7 @@ export function Testimonials() {
               margin: 0,
             }}
           >
-            Ils nous font <span style={{ color: "#e63946" }}>confiance</span>
+            Ils nous font <span style={{ color: "#00d4ff" }}>confiance</span>
           </h2>
         </div>
 
@@ -91,7 +91,7 @@ export function Testimonials() {
             <div
               key={t.name}
               style={{
-                background: "#0a0a0a",
+                background: "#0a0f1e",
                 border: "1px solid rgba(255,255,255,0.06)",
                 borderRadius: "6px",
                 padding: "36px 28px",
@@ -110,7 +110,7 @@ export function Testimonials() {
                   position: "absolute",
                   top: "24px",
                   right: "24px",
-                  color: "rgba(230,57,70,0.12)",
+                  color: "rgba(0,212,255,0.12)",
                 }}
               >
                 <Quote size={40} />
@@ -119,7 +119,7 @@ export function Testimonials() {
               {/* Stars */}
               <div style={{ display: "flex", gap: "4px" }}>
                 {[...Array(t.stars)].map((_, si) => (
-                  <Star key={si} size={14} fill="#e63946" color="#e63946" />
+                  <Star key={si} size={14} fill="#00d4ff" color="#00d4ff" />
                 ))}
               </div>
 
@@ -143,13 +143,13 @@ export function Testimonials() {
                   style={{
                     width: 44,
                     height: 44,
-                    background: "rgba(230,57,70,0.15)",
-                    border: "1px solid rgba(230,57,70,0.3)",
+                    background: "rgba(0,212,255,0.15)",
+                    border: "1px solid rgba(0,212,255,0.3)",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#e63946",
+                    color: "#00d4ff",
                     fontWeight: 700,
                     fontSize: "14px",
                     flexShrink: 0,

@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Linkedin, Github } from "lucide-react";
+﻿import { Phone, Mail, MapPin, Linkedin, Github } from "lucide-react";
 
 const SERVICES_LINKS = [
   "Support & Dépannage",
@@ -18,12 +18,12 @@ const LEGAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer style={{ background: "#0a0a0a" }}>
+    <footer style={{ background: "#0a0f1e" }}>
       {/* Red accent line */}
       <div
         style={{
           height: "3px",
-          background: "linear-gradient(90deg, transparent, #e63946, transparent)",
+          background: "linear-gradient(90deg, transparent, #00d4ff, transparent)",
         }}
       />
 
@@ -50,7 +50,7 @@ export function Footer() {
                 style={{
                   width: 32,
                   height: 32,
-                  background: "#e63946",
+                  background: "#00d4ff",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -65,7 +65,7 @@ export function Footer() {
               </div>
               <div>
                 <span style={{ color: "#fff", fontWeight: 800, fontSize: "16px", letterSpacing: "2px" }}>ISN</span>
-                <span style={{ color: "#e63946", fontWeight: 800, fontSize: "16px", letterSpacing: "2px" }}>GROUP</span>
+                <span style={{ color: "#00d4ff", fontWeight: 800, fontSize: "16px", letterSpacing: "2px" }}>GROUP</span>
               </div>
             </div>
 
@@ -88,12 +88,12 @@ export function Footer() {
                 { icon: <MapPin size={13} />, text: "Gironde (33), France", href: null },
               ].map((item) => (
                 <div key={item.text} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <span style={{ color: "#e63946" }}>{item.icon}</span>
+                  <span style={{ color: "#00d4ff" }}>{item.icon}</span>
                   {item.href ? (
                     <a
                       href={item.href}
                       style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: "13px" }}
-                      onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#e63946")}
+                      onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#00d4ff")}
                       onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "rgba(255,255,255,0.5)")}
                     >
                       {item.text}
@@ -117,7 +117,7 @@ export function Footer() {
                 textTransform: "uppercase",
                 marginBottom: "20px",
                 paddingBottom: "12px",
-                borderBottom: "1px solid rgba(230,57,70,0.2)",
+                borderBottom: "1px solid rgba(0,212,255,0.2)",
               }}
             >
               Nos services
@@ -138,14 +138,14 @@ export function Footer() {
                     }}
                     onMouseEnter={(e) => {
                       const el = e.currentTarget as HTMLAnchorElement;
-                      el.style.color = "#e63946";
+                      el.style.color = "#00d4ff";
                     }}
                     onMouseLeave={(e) => {
                       const el = e.currentTarget as HTMLAnchorElement;
                       el.style.color = "rgba(255,255,255,0.45)";
                     }}
                   >
-                    <span style={{ color: "#e63946", fontSize: "10px" }}>▶</span>
+                    <span style={{ color: "#00d4ff", fontSize: "10px" }}>▶</span>
                     {s}
                   </a>
                 </li>
@@ -164,7 +164,7 @@ export function Footer() {
                 textTransform: "uppercase",
                 marginBottom: "20px",
                 paddingBottom: "12px",
-                borderBottom: "1px solid rgba(230,57,70,0.2)",
+                borderBottom: "1px solid rgba(0,212,255,0.2)",
               }}
             >
               Informations légales
@@ -180,7 +180,7 @@ export function Footer() {
                       fontSize: "13px",
                       transition: "color 0.2s",
                     }}
-                    onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#e63946")}
+                    onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#00d4ff")}
                     onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "rgba(255,255,255,0.45)")}
                   >
                     {l}
@@ -214,7 +214,7 @@ export function Footer() {
                   style={{
                     width: 38,
                     height: 38,
-                    background: "#111111",
+                    background: "#0d1526",
                     border: "1px solid rgba(255,255,255,0.1)",
                     borderRadius: "4px",
                     display: "flex",
@@ -226,13 +226,13 @@ export function Footer() {
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLAnchorElement;
-                    el.style.background = "#e63946";
-                    el.style.borderColor = "#e63946";
+                    el.style.background = "#00d4ff";
+                    el.style.borderColor = "#00d4ff";
                     el.style.color = "#fff";
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLAnchorElement;
-                    el.style.background = "#111111";
+                    el.style.background = "#0d1526";
                     el.style.borderColor = "rgba(255,255,255,0.1)";
                     el.style.color = "rgba(255,255,255,0.5)";
                   }}

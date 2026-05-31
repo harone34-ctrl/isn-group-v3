@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+﻿import { ChevronDown } from "lucide-react";
 
 const TICKER_WORDS = [
   "JE RÉPARE",
@@ -70,7 +70,7 @@ export function Hero() {
       id="accueil"
       style={{
         minHeight: "100vh",
-        background: "#0a0a0a",
+        background: "#0a0f1e",
         display: "flex",
         flexDirection: "column",
         position: "relative",
@@ -100,7 +100,7 @@ export function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(135deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.40) 50%, rgba(10,10,10,0.55) 100%)",
+            "linear-gradient(135deg, rgba(10,15,30,0.55) 0%, rgba(10,15,30,0.40) 50%, rgba(10,15,30,0.55) 100%)",
         }}
       />
 
@@ -113,7 +113,7 @@ export function Hero() {
           transform: "translate(-50%, -50%)",
           width: "700px",
           height: "700px",
-          background: "radial-gradient(circle, rgba(230,57,70,0.1) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -124,7 +124,7 @@ export function Hero() {
           position: "relative",
           zIndex: 3,
           width: "100%",
-          background: "rgba(10,10,10,0.85)",
+          background: "rgba(10,15,30,0.85)",
           borderTop: "1px solid rgba(255,255,255,0.1)",
           borderBottom: "1px solid rgba(255,255,255,0.1)",
           backdropFilter: "blur(8px)",
@@ -138,12 +138,12 @@ export function Hero() {
       >
         <div style={{
           position: "absolute", left: 0, top: 0, bottom: 0, width: "80px",
-          background: "linear-gradient(to right, #0a0a0a, transparent)",
+          background: "linear-gradient(to right, #0a0f1e, transparent)",
           zIndex: 2, pointerEvents: "none",
         }} />
         <div style={{
           position: "absolute", right: 0, top: 0, bottom: 0, width: "80px",
-          background: "linear-gradient(to left, #0a0a0a, transparent)",
+          background: "linear-gradient(to left, #0a0f1e, transparent)",
           zIndex: 2, pointerEvents: "none",
         }} />
         <div
@@ -195,8 +195,8 @@ export function Hero() {
             display: "inline-flex",
             alignItems: "center",
             gap: "8px",
-            background: "rgba(230,57,70,0.12)",
-            border: "1px solid rgba(230,57,70,0.3)",
+            background: "rgba(0,212,255,0.12)",
+            border: "1px solid rgba(0,212,255,0.3)",
             borderRadius: "100px",
             padding: "6px 16px",
             marginBottom: "32px",
@@ -207,13 +207,13 @@ export function Hero() {
               width: 6,
               height: 6,
               borderRadius: "50%",
-              background: "#e63946",
+              background: "#00d4ff",
               animation: "pulse-dot 1.5s infinite",
             }}
           />
           <span
             style={{
-              color: "#e63946",
+              color: "#00d4ff",
               fontSize: "12px",
               letterSpacing: "2px",
               textTransform: "uppercase",
@@ -230,20 +230,20 @@ export function Hero() {
             position: "relative",
             overflow: "hidden",
             marginBottom: "32px",
-            borderTop: "1px solid rgba(230,57,70,0.2)",
-            borderBottom: "1px solid rgba(230,57,70,0.2)",
+            borderTop: "1px solid rgba(0,212,255,0.2)",
+            borderBottom: "1px solid rgba(0,212,255,0.2)",
             padding: "12px 0",
             width: "25%",
           }}
         >
           <div style={{
             position: "absolute", left: 0, top: 0, bottom: 0, width: "60px",
-            background: "linear-gradient(to right, rgba(10,10,10,0.9), transparent)",
+            background: "linear-gradient(to right, rgba(10,15,30,0.9), transparent)",
             zIndex: 2, pointerEvents: "none",
           }} />
           <div style={{
             position: "absolute", right: 0, top: 0, bottom: 0, width: "60px",
-            background: "linear-gradient(to left, rgba(10,10,10,0.9), transparent)",
+            background: "linear-gradient(to left, rgba(10,15,30,0.9), transparent)",
             zIndex: 2, pointerEvents: "none",
           }} />
           <div
@@ -257,7 +257,7 @@ export function Hero() {
               <span
                 key={i}
                 style={{
-                  color: "#e63946",
+                  color: "#00d4ff",
                   fontSize: "15px",
                   fontWeight: 800,
                   letterSpacing: "3px",
@@ -287,7 +287,7 @@ export function Hero() {
         >
           Un Technicien de Terrain
           <br />
-          <span style={{ color: "#e63946" }}>à Votre Service</span>
+          <span style={{ color: "#00d4ff" }}>à Votre Service</span>
         </h1>
 
         {/* Sous-titre */}
@@ -311,8 +311,8 @@ export function Hero() {
           <a
             href="#contact"
             style={{
-              background: "#e63946",
-              color: "#fff",
+              background: "#00d4ff",
+              color: "#0a0f1e",
               textDecoration: "none",
               padding: "16px 32px",
               fontSize: "14px",
@@ -322,19 +322,19 @@ export function Hero() {
               borderRadius: "3px",
               transition: "all 0.2s",
               display: "inline-block",
-              boxShadow: "0 0 30px rgba(230,57,70,0.4)",
+              boxShadow: "0 0 30px rgba(0,212,255,0.4)",
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget;
-              el.style.background = "#c0392b";
+              el.style.background = "#0099cc";
               el.style.transform = "translateY(-2px)";
-              el.style.boxShadow = "0 0 40px rgba(230,57,70,0.6)";
+              el.style.boxShadow = "0 0 40px rgba(0,212,255,0.6)";
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget;
-              el.style.background = "#e63946";
+              el.style.background = "#00d4ff";
               el.style.transform = "translateY(0)";
-              el.style.boxShadow = "0 0 30px rgba(230,57,70,0.4)";
+              el.style.boxShadow = "0 0 30px rgba(0,212,255,0.4)";
             }}
           >
             Demander un devis gratuit
@@ -357,8 +357,8 @@ export function Hero() {
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget;
-              el.style.borderColor = "#e63946";
-              el.style.color = "#e63946";
+              el.style.borderColor = "#00d4ff";
+              el.style.color = "#00d4ff";
               el.style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {

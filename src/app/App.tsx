@@ -1,4 +1,4 @@
-import { Header } from "./components/Header";
+﻿import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { KeyFigures } from "./components/KeyFigures";
 import { HardwareGallery } from "./components/HardwareGallery";
@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div
       style={{
-        background: "#0a0a0a",
+        background: "#0a0f1e",
         minHeight: "100vh",
         overflowX: "hidden",
         scrollBehavior: "smooth",

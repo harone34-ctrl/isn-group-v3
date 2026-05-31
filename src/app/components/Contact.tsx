@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 
 export function Contact() {
@@ -31,7 +31,7 @@ export function Contact() {
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
-    background: "#111111",
+    background: "#0d1526",
     border: "1px solid rgba(255,255,255,0.1)",
     borderRadius: "4px",
     padding: "12px 16px",
@@ -55,9 +55,9 @@ export function Contact() {
     <section
       id="contact"
       style={{
-        background: "#0a0a0a",
+        background: "#0a0f1e",
         padding: "100px 24px",
-        borderTop: "1px solid rgba(230,57,70,0.1)",
+        borderTop: "1px solid rgba(0,212,255,0.1)",
       }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -65,7 +65,7 @@ export function Contact() {
         <div style={{ textAlign: "center", marginBottom: "64px" }}>
           <div
             style={{
-              color: "#e63946",
+              color: "#00d4ff",
               fontSize: "11px",
               letterSpacing: "4px",
               textTransform: "uppercase",
@@ -85,7 +85,7 @@ export function Contact() {
               margin: 0,
             }}
           >
-            Démarrons votre <span style={{ color: "#e63946" }}>projet</span>
+            Démarrons votre <span style={{ color: "#00d4ff" }}>projet</span>
           </h2>
         </div>
 
@@ -102,8 +102,8 @@ export function Contact() {
             {submitted ? (
               <div
                 style={{
-                  background: "rgba(230,57,70,0.08)",
-                  border: "1px solid rgba(230,57,70,0.3)",
+                  background: "rgba(0,212,255,0.08)",
+                  border: "1px solid rgba(0,212,255,0.3)",
                   borderRadius: "6px",
                   padding: "48px 32px",
                   textAlign: "center",
@@ -113,7 +113,7 @@ export function Contact() {
                   gap: "16px",
                 }}
               >
-                <CheckCircle size={48} color="#e63946" />
+                <CheckCircle size={48} color="#00d4ff" />
                 <div>
                   <p style={{ color: "#fff", fontWeight: 700, fontSize: "18px", margin: "0 0 8px" }}>
                     Message envoyé !
@@ -136,7 +136,7 @@ export function Contact() {
                       required
                       placeholder="Jean Martin"
                       style={inputStyle}
-                      onFocus={(e) => (e.target.style.borderColor = "#e63946")}
+                      onFocus={(e) => (e.target.style.borderColor = "#00d4ff")}
                       onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                     />
                   </div>
@@ -149,7 +149,7 @@ export function Contact() {
                       onChange={handleChange}
                       placeholder="Votre entreprise"
                       style={inputStyle}
-                      onFocus={(e) => (e.target.style.borderColor = "#e63946")}
+                      onFocus={(e) => (e.target.style.borderColor = "#00d4ff")}
                       onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                     />
                   </div>
@@ -165,7 +165,7 @@ export function Contact() {
                     required
                     placeholder="contact@entreprise.fr"
                     style={inputStyle}
-                    onFocus={(e) => (e.target.style.borderColor = "#e63946")}
+                    onFocus={(e) => (e.target.style.borderColor = "#00d4ff")}
                     onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                   />
                 </div>
@@ -179,7 +179,7 @@ export function Contact() {
                     onChange={handleChange}
                     placeholder="07 67 80 42 47"
                     style={inputStyle}
-                    onFocus={(e) => (e.target.style.borderColor = "#e63946")}
+                    onFocus={(e) => (e.target.style.borderColor = "#00d4ff")}
                     onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                   />
                 </div>
@@ -198,7 +198,7 @@ export function Contact() {
                       resize: "vertical",
                       minHeight: "120px",
                     }}
-                    onFocus={(e) => (e.target.style.borderColor = "#e63946")}
+                    onFocus={(e) => (e.target.style.borderColor = "#00d4ff")}
                     onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                   />
                 </div>
@@ -206,8 +206,8 @@ export function Contact() {
                 <button
                   type="submit"
                   style={{
-                    background: "#e63946",
-                    color: "#fff",
+                    background: "#00d4ff",
+                    color: "#0a0f1e",
                     border: "none",
                     padding: "15px 28px",
                     fontSize: "13px",
@@ -224,11 +224,11 @@ export function Contact() {
                     width: "100%",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLButtonElement).style.background = "#c0392b";
+                    (e.currentTarget as HTMLButtonElement).style.background = "#0099cc";
                     (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-1px)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLButtonElement).style.background = "#e63946";
+                    (e.currentTarget as HTMLButtonElement).style.background = "#00d4ff";
                     (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)";
                   }}
                 >
@@ -243,7 +243,7 @@ export function Contact() {
           <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
             <div
               style={{
-                background: "#111111",
+                background: "#0d1526",
                 border: "1px solid rgba(255,255,255,0.06)",
                 borderRadius: "6px",
                 padding: "32px",
@@ -258,7 +258,7 @@ export function Contact() {
                   textTransform: "uppercase",
                   marginBottom: "24px",
                   paddingBottom: "16px",
-                  borderBottom: "1px solid rgba(230,57,70,0.2)",
+                  borderBottom: "1px solid rgba(0,212,255,0.2)",
                 }}
               >
                 Informations de contact
@@ -290,13 +290,13 @@ export function Contact() {
                       style={{
                         width: 36,
                         height: 36,
-                        background: "rgba(230,57,70,0.1)",
-                        border: "1px solid rgba(230,57,70,0.2)",
+                        background: "rgba(0,212,255,0.1)",
+                        border: "1px solid rgba(0,212,255,0.2)",
                         borderRadius: "4px",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#e63946",
+                        color: "#00d4ff",
                         flexShrink: 0,
                       }}
                     >
@@ -310,7 +310,7 @@ export function Contact() {
                         <a
                           href={info.href}
                           style={{ color: "#fff", textDecoration: "none", fontSize: "14px", fontWeight: 500 }}
-                          onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#e63946")}
+                          onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#00d4ff")}
                           onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "#fff")}
                         >
                           {info.value}
@@ -327,7 +327,7 @@ export function Contact() {
             {/* Hours */}
             <div
               style={{
-                background: "#111111",
+                background: "#0d1526",
                 border: "1px solid rgba(255,255,255,0.06)",
                 borderRadius: "6px",
                 padding: "28px 32px",
@@ -361,7 +361,7 @@ export function Contact() {
                   }}
                 >
                   <span style={{ color: "rgba(255,255,255,0.5)" }}>{h.day}</span>
-                  <span style={{ color: "#e63946", fontWeight: 600 }}>{h.hours}</span>
+                  <span style={{ color: "#00d4ff", fontWeight: 600 }}>{h.hours}</span>
                 </div>
               ))}
             </div>

@@ -1,10 +1,10 @@
-import { Zap, ArrowRight } from "lucide-react";
+﻿import { Zap, ArrowRight } from "lucide-react";
 
 export function UrgentCTA() {
   return (
     <section
       style={{
-        background: "linear-gradient(135deg, #c0392b 0%, #e63946 50%, #c0392b 100%)",
+        background: "linear-gradient(135deg, #0099cc 0%, #00d4ff 50%, #0099cc 100%)",
         padding: "64px 24px",
         position: "relative",
         overflow: "hidden",
@@ -76,7 +76,7 @@ export function UrgentCTA() {
             href="tel:0767804247"
             style={{
               background: "#fff",
-              color: "#c0392b",
+              color: "#0099cc",
               textDecoration: "none",
               padding: "14px 28px",
               fontSize: "14px",

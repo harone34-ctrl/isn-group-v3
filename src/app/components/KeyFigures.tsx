@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 
 interface CounterProps {
   target: number;
@@ -56,7 +56,7 @@ function Counter({ target, suffix, label, duration = 2000 }: CounterProps) {
         style={{
           fontSize: "clamp(56px, 8vw, 80px)",
           fontWeight: 900,
-          color: "#e63946",
+          color: "#00d4ff",
           lineHeight: 1,
           marginBottom: "12px",
           letterSpacing: "-2px",
@@ -83,7 +83,7 @@ export function KeyFigures() {
   return (
     <section
       style={{
-        background: "#111111",
+        background: "#0d1526",
         padding: "80px 24px",
         position: "relative",
         overflow: "hidden",
@@ -121,7 +121,7 @@ export function KeyFigures() {
           <div
             style={{
               width: "1px",
-              background: "rgba(230,57,70,0.2)",
+              background: "rgba(0,212,255,0.2)",
               alignSelf: "stretch",
               margin: "40px 0",
             }}
@@ -133,7 +133,7 @@ export function KeyFigures() {
           <div
             style={{
               width: "1px",
-              background: "rgba(230,57,70,0.2)",
+              background: "rgba(0,212,255,0.2)",
               alignSelf: "stretch",
               margin: "40px 0",
             }}

@@ -1,4 +1,4 @@
-const PARTNERS = [
+﻿const PARTNERS = [
   {
     name: "Microsoft",
     color: "#00a4ef",
@@ -140,9 +140,9 @@ export function PartnerLogos() {
     <section
       id="partenaires"
       style={{
-        background: "#0a0a0a",
-        borderTop: "1px solid rgba(230,57,70,0.15)",
-        borderBottom: "1px solid rgba(230,57,70,0.15)",
+        background: "#0a0f1e",
+        borderTop: "1px solid rgba(0,212,255,0.15)",
+        borderBottom: "1px solid rgba(0,212,255,0.15)",
         padding: "44px 0",
         overflow: "hidden",
       }}
@@ -169,7 +169,7 @@ export function PartnerLogos() {
             top: 0,
             bottom: 0,
             width: "120px",
-            background: "linear-gradient(to right, #0a0a0a, transparent)",
+            background: "linear-gradient(to right, #0a0f1e, transparent)",
             zIndex: 2,
             pointerEvents: "none",
           }}
@@ -182,7 +182,7 @@ export function PartnerLogos() {
             top: 0,
             bottom: 0,
             width: "120px",
-            background: "linear-gradient(to left, #0a0a0a, transparent)",
+            background: "linear-gradient(to left, #0a0f1e, transparent)",
             zIndex: 2,
             pointerEvents: "none",
           }}

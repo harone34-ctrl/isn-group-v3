@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Phone, Mail, Clock, Menu, X } from "lucide-react";
 
 export function Header() {
@@ -23,7 +23,7 @@ export function Header() {
       {/* Top strip */}
       <div
         style={{
-          background: "#e63946",
+          background: "#00d4ff",
           padding: "6px 24px",
           display: "flex",
           alignItems: "center",
@@ -55,8 +55,8 @@ export function Header() {
       {/* Main nav */}
       <nav
         style={{
-          background: scrolled ? "rgba(10,10,10,0.98)" : "#0a0a0a",
-          borderBottom: "1px solid rgba(230,57,70,0.2)",
+          background: scrolled ? "rgba(10,15,30,0.98)" : "#0a0f1e",
+          borderBottom: "1px solid rgba(0,212,255,0.2)",
           backdropFilter: "blur(12px)",
           padding: "0 32px",
           display: "flex",
@@ -72,7 +72,7 @@ export function Header() {
             style={{
               width: 36,
               height: 36,
-              background: "#e63946",
+              background: "#00d4ff",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -87,7 +87,7 @@ export function Header() {
           </div>
           <div>
             <span style={{ color: "#fff", fontWeight: 800, fontSize: "18px", letterSpacing: "2px" }}>ISN</span>
-            <span style={{ color: "#e63946", fontWeight: 800, fontSize: "18px", letterSpacing: "2px" }}>GROUP</span>
+            <span style={{ color: "#00d4ff", fontWeight: 800, fontSize: "18px", letterSpacing: "2px" }}>GROUP</span>
           </div>
         </a>
 
@@ -119,8 +119,8 @@ export function Header() {
                   borderBottom: "2px solid transparent",
                 }}
                 onMouseEnter={(e) => {
-                  (e.target as HTMLAnchorElement).style.color = "#e63946";
-                  (e.target as HTMLAnchorElement).style.borderBottomColor = "#e63946";
+                  (e.target as HTMLAnchorElement).style.color = "#00d4ff";
+                  (e.target as HTMLAnchorElement).style.borderBottomColor = "#00d4ff";
                 }}
                 onMouseLeave={(e) => {
                   (e.target as HTMLAnchorElement).style.color = "#fff";
@@ -135,7 +135,7 @@ export function Header() {
             <a
               href="#contact"
               style={{
-                background: "#e63946",
+                background: "#00d4ff",
                 color: "#fff",
                 textDecoration: "none",
                 padding: "10px 20px",
@@ -148,11 +148,11 @@ export function Header() {
                 display: "inline-block",
               }}
               onMouseEnter={(e) => {
-                (e.target as HTMLAnchorElement).style.background = "#c0392b";
+                (e.target as HTMLAnchorElement).style.background = "#0099cc";
                 (e.target as HTMLAnchorElement).style.transform = "translateY(-1px)";
               }}
               onMouseLeave={(e) => {
-                (e.target as HTMLAnchorElement).style.background = "#e63946";
+                (e.target as HTMLAnchorElement).style.background = "#00d4ff";
                 (e.target as HTMLAnchorElement).style.transform = "translateY(0)";
               }}
             >
@@ -183,8 +183,8 @@ export function Header() {
       {mobileOpen && (
         <div
           style={{
-            background: "#111111",
-            borderTop: "1px solid rgba(230,57,70,0.3)",
+            background: "#0d1526",
+            borderTop: "1px solid rgba(0,212,255,0.3)",
             padding: "20px 24px",
             display: "flex",
             flexDirection: "column",
@@ -214,7 +214,7 @@ export function Header() {
             href="#contact"
             onClick={() => setMobileOpen(false)}
             style={{
-              background: "#e63946",
+              background: "#00d4ff",
               color: "#fff",
               textDecoration: "none",
               padding: "12px 20px",

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { CheckCircle, Award, Users, Clock } from "lucide-react";
 
 const HIGHLIGHTS = [
@@ -26,9 +26,9 @@ export function About() {
     <section
       id="apropos"
       style={{
-        background: "#0a0a0a",
+        background: "#0a0f1e",
         padding: "100px 24px",
-        borderTop: "1px solid rgba(230,57,70,0.1)",
+        borderTop: "1px solid rgba(0,212,255,0.1)",
       }}
     >
       <div
@@ -52,7 +52,7 @@ export function About() {
         >
           <div
             style={{
-              color: "#e63946",
+              color: "#00d4ff",
               fontSize: "11px",
               letterSpacing: "4px",
               textTransform: "uppercase",
@@ -75,7 +75,7 @@ export function About() {
             }}
           >
             Un technicien{" "}
-            <span style={{ color: "#e63946" }}>passionné</span>,
+            <span style={{ color: "#00d4ff" }}>passionné</span>,
             <br />à votre service
           </h2>
 
@@ -108,7 +108,7 @@ export function About() {
                   lineHeight: 1.5,
                 }}
               >
-                <CheckCircle size={16} color="#e63946" style={{ marginTop: "2px", flexShrink: 0 }} />
+                <CheckCircle size={16} color="#00d4ff" style={{ marginTop: "2px", flexShrink: 0 }} />
                 {point}
               </li>
             ))}
@@ -117,7 +117,7 @@ export function About() {
           <a
             href="#contact"
             style={{
-              background: "#e63946",
+              background: "#00d4ff",
               color: "#fff",
               textDecoration: "none",
               padding: "14px 28px",
@@ -130,11 +130,11 @@ export function About() {
               display: "inline-block",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#c0392b";
+              (e.currentTarget as HTMLAnchorElement).style.background = "#0099cc";
               (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#e63946";
+              (e.currentTarget as HTMLAnchorElement).style.background = "#00d4ff";
               (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
             }}
           >
@@ -154,7 +154,7 @@ export function About() {
             style={{
               borderRadius: "8px",
               overflow: "hidden",
-              border: "1px solid rgba(230,57,70,0.2)",
+              border: "1px solid rgba(0,212,255,0.2)",
               position: "relative",
             }}
           >
@@ -163,7 +163,7 @@ export function About() {
               style={{
                 position: "absolute",
                 inset: 0,
-                background: "linear-gradient(180deg, transparent 50%, rgba(10,10,10,0.85) 100%)",
+                background: "linear-gradient(180deg, transparent 50%, rgba(10,15,30,0.85) 100%)",
                 zIndex: 1,
                 pointerEvents: "none",
               }}
@@ -175,7 +175,7 @@ export function About() {
                 left: 0,
                 right: 0,
                 height: "3px",
-                background: "#e63946",
+                background: "#00d4ff",
                 zIndex: 2,
               }}
             />
@@ -215,8 +215,8 @@ export function About() {
                 <div
                   key={stat.label}
                   style={{
-                    background: "rgba(10,10,10,0.85)",
-                    border: "1px solid rgba(230,57,70,0.25)",
+                    background: "rgba(10,15,30,0.85)",
+                    border: "1px solid rgba(0,212,255,0.25)",
                     borderRadius: "4px",
                     padding: "10px 14px",
                     display: "flex",
@@ -225,7 +225,7 @@ export function About() {
                     backdropFilter: "blur(8px)",
                   }}
                 >
-                  <div style={{ color: "#e63946", flexShrink: 0 }}>{stat.icon}</div>
+                  <div style={{ color: "#00d4ff", flexShrink: 0 }}>{stat.icon}</div>
                   <div>
                     <div style={{ color: "#fff", fontWeight: 700, fontSize: "14px", lineHeight: 1 }}>{stat.value}</div>
                     <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "11px", letterSpacing: "0.5px", marginTop: "2px" }}>

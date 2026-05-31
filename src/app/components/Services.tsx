@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import {
   Wrench,
   Network,
@@ -68,13 +68,13 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: "#111111",
-        border: hovered ? "1px solid #e63946" : "1px solid rgba(255,255,255,0.06)",
+        background: "#0d1526",
+        border: hovered ? "1px solid #00d4ff" : "1px solid rgba(255,255,255,0.06)",
         borderRadius: "6px",
         padding: "36px 28px",
         transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)",
         cursor: "default",
-        boxShadow: hovered ? "0 0 28px rgba(230,57,70,0.18), inset 0 0 0 1px rgba(230,57,70,0.1)" : "none",
+        boxShadow: hovered ? "0 0 28px rgba(0,212,255,0.18), inset 0 0 0 1px rgba(0,212,255,0.1)" : "none",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(28px)",
         transitionDelay: `${index * 80}ms`,
@@ -88,13 +88,13 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
         style={{
           width: 56,
           height: 56,
-          background: hovered ? "rgba(230,57,70,0.15)" : "rgba(230,57,70,0.08)",
-          border: "1px solid rgba(230,57,70,0.25)",
+          background: hovered ? "rgba(0,212,255,0.15)" : "rgba(0,212,255,0.08)",
+          border: "1px solid rgba(0,212,255,0.25)",
           borderRadius: "4px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "#e63946",
+          color: "#00d4ff",
           transition: "all 0.3s",
         }}
       >
@@ -130,7 +130,7 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
       <a
         href="#contact"
         style={{
-          color: "#e63946",
+          color: "#00d4ff",
           textDecoration: "none",
           fontSize: "13px",
           letterSpacing: "1px",
@@ -173,7 +173,7 @@ export function Services() {
     <section
       id="services"
       style={{
-        background: "#0a0a0a",
+        background: "#0a0f1e",
         padding: "100px 24px",
         position: "relative",
         overflow: "hidden",
@@ -210,7 +210,7 @@ export function Services() {
         >
           <div
             style={{
-              color: "#e63946",
+              color: "#00d4ff",
               fontSize: "11px",
               letterSpacing: "4px",
               textTransform: "uppercase",
@@ -232,7 +232,7 @@ export function Services() {
             }}
           >
             Ce que nous faisons,{" "}
-            <span style={{ color: "#e63946" }}>nous le faisons bien</span>
+            <span style={{ color: "#00d4ff" }}>nous le faisons bien</span>
           </h2>
         </div>
 
