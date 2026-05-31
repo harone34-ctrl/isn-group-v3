@@ -35,6 +35,50 @@
       html, body { height: 100%; margin: 0; background: #0a0f1e; }
       #root { height: 100%; }
     </style>
+
+    <!-- JSON-LD LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ISN Group",
+      "alternateName": "Innovative Systems & Networks",
+      "description": "Technicien informatique certifié TAI en Gironde. Support, dépannage, architecture réseau, cybersécurité, infogérance MSP et solutions IA locales pour entreprises et professionnels.",
+      "url": "https://isngroup.fr",
+      "telephone": "+33767804247",
+      "email": "contact@isngroup.fr",
+      "foundingDate": "2006",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Gironde"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Gironde",
+        "postalCode": "33",
+        "addressCountry": "FR"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services IT",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Support & Dépannage informatique" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Architecture Réseau" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Infogérance MSP" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cybersécurité" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conception Web" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Solutions IA Locales" } }
+        ]
+      },
+      "sameAs": []
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
