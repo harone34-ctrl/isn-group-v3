@@ -26,7 +26,7 @@ export function About() {
     <section
       id="apropos"
       style={{
-        backgroundImage: "url('/image-fond-3.jpg')",
+        backgroundImage: "url('/imgfd3.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundColor: "#0d1526",

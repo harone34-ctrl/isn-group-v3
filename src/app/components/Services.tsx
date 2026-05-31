@@ -173,7 +173,7 @@ export function Services() {
     <section
       id="services"
       style={{
-        backgroundImage: "url('/image-fond-2.jpg')",
+        backgroundImage: "url('/imgfd2.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundColor: "#111d35",
