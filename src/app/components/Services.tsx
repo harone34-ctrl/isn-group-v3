@@ -11,37 +11,37 @@ import {
 
 const SERVICES = [
   {
-    icon: <Wrench size={31} />,
+    icon: <Wrench size={29} />,
     title: "Support & Dépannage",
     description:
       "Maintenance préventive, dépannage sur site ou à distance, gestion de parc informatique. Intervention rapide pour minimiser vos interruptions d'activité.",
   },
   {
-    icon: <Network size={31} />,
+    icon: <Network size={29} />,
     title: "Architecture Réseau",
     description:
       "Installation de switchs, routeurs, VLANs, WiFi entreprise, câblage structuré. Conception et déploiement d'infrastructures réseau robustes.",
   },
   {
-    icon: <MonitorCog size={31} />,
+    icon: <MonitorCog size={29} />,
     title: "Infogérance MSP",
     description:
       "Supervision, monitoring 24/7, gestion complète de l'infrastructure IT. Votre DSI externalisé pour plus de sérénité et de performance.",
   },
   {
-    icon: <ShieldCheck size={31} />,
+    icon: <ShieldCheck size={29} />,
     title: "Cybersécurité",
     description:
       "Audit sécurité, antivirus entreprise, pare-feu, protection des données. Sécurisez votre système d'information contre les menaces actuelles.",
   },
   {
-    icon: <Code2 size={31} />,
+    icon: <Code2 size={29} />,
     title: "Conception Web",
     description:
       "Création de sites React/Vite, déploiement CI/CD, SEO technique, audit sécurité. Des solutions web performantes et optimisées.",
   },
   {
-    icon: <Brain size={31} />,
+    icon: <Brain size={29} />,
     title: "Solutions IA Locales",
     description:
       "Déploiement d'agents IA on-premise. Données privées, sans cloud. Exploitez la puissance de l'IA en gardant le contrôle total de vos données.",
@@ -117,7 +117,7 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
         <p
           style={{
             color: "rgba(255,255,255,0.55)",
-            fontSize: "17px",
+            fontSize: "15px",
             lineHeight: 1.7,
             fontWeight: 300,
             margin: 0,
@@ -132,7 +132,7 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
         style={{
           color: "#00d4ff",
           textDecoration: "none",
-          fontSize: "16px",
+          fontSize: "14px",
           letterSpacing: "1px",
           textTransform: "uppercase",
           fontWeight: 600,

@@ -261,11 +261,12 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Titre principal */}
+        {/* Titre principal — changer "hero-anim-1" en hero-anim-2 / 3 / 4 pour tester */}
         <h1
+          className="hero-anim-combo"
           style={{
             color: "#ffffff",
-            fontSize: "clamp(31px, 6vw, 67px)",
+            fontSize: "clamp(26px, 5.1vw, 57px)",
             fontWeight: 900,
             lineHeight: 1.1,
             textTransform: "uppercase",
@@ -273,9 +274,9 @@ export function Hero() {
             marginBottom: "24px",
           }}
         >
-          Un Technicien de Terrain
+          <span className="hero-line1">Un Technicien de Terrain</span>
           <br />
-          <span style={{ color: "#00d4ff" }}>à Votre Service</span>
+          <span className="hero-line2" style={{ color: "#00d4ff" }}>à Votre Service</span>
         </h1>
 
         {/* Sous-titre */}
@@ -284,7 +285,7 @@ export function Hero() {
             color: "rgba(255,255,255,0.6)",
             fontSize: "clamp(15px, 2vw, 18px)",
             lineHeight: 1.7,
-            maxWidth: "680px",
+            maxWidth: "600px",
             margin: "0 auto 40px",
             fontWeight: 300,
           }}
@@ -402,6 +403,79 @@ export function Hero() {
         @keyframes bounce-arrow {
           0%, 100% { transform: translateX(-50%) translateY(0); }
           50%       { transform: translateX(-50%) translateY(6px); }
+        }
+
+        /* ── ANIMATION 1 : FADE IN ── */
+        .hero-anim-1 {
+          animation: hero-fade-in 1s ease-out both;
+        }
+        @keyframes hero-fade-in {
+          from { opacity: 0; transform: translateY(30px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── ANIMATION 2 : GLITCH ── */
+        .hero-anim-2 {
+          animation: hero-glitch 4s infinite;
+        }
+        @keyframes hero-glitch {
+          0%, 94%, 100% { transform: translateX(0) skewX(0deg); }
+          95%  { transform: translateX(-4px) skewX(-1deg); }
+          96%  { transform: translateX(4px)  skewX(1deg); }
+          97%  { transform: translateX(-3px) skewX(0deg); }
+          98%  { transform: translateX(2px); }
+          99%  { transform: translateX(0); }
+        }
+
+        /* ── ANIMATION 3 : SPLIT REVEAL ── */
+        .hero-anim-3 .hero-line1 {
+          display: inline-block;
+          animation: slide-from-left 0.8s ease-out both;
+        }
+        .hero-anim-3 .hero-line2 {
+          display: inline-block;
+          animation: slide-from-right 0.8s ease-out 0.1s both;
+        }
+        @keyframes slide-from-left {
+          from { opacity: 0; transform: translateX(-80px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slide-from-right {
+          from { opacity: 0; transform: translateX(80px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+
+        /* ── ANIMATION 4 : NEON PULSE ── */
+        .hero-anim-4 .hero-line2 {
+          animation: neon-pulse 2s ease-in-out infinite;
+        }
+        @keyframes neon-pulse {
+          0%, 100% {
+            text-shadow: 0 0 8px rgba(0,212,255,0.3), 0 0 16px rgba(0,212,255,0.2);
+          }
+          50% {
+            text-shadow: 0 0 20px rgba(0,212,255,1), 0 0 40px rgba(0,212,255,0.7), 0 0 80px rgba(0,212,255,0.4);
+          }
+        }
+
+        /* ── ANIMATION COMBO : SPLIT REVEAL → NEON PULSE ── */
+        .hero-anim-combo .hero-line1 {
+          display: inline-block;
+          animation: combo-slide-left 1.5s ease-out both;
+        }
+        .hero-anim-combo .hero-line2 {
+          display: inline-block;
+          animation:
+            combo-slide-right 1.5s ease-out both,
+            neon-pulse 2s ease-in-out 1.5s infinite;
+        }
+        @keyframes combo-slide-left {
+          from { opacity: 0; transform: translateX(-300px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes combo-slide-right {
+          from { opacity: 0; transform: translateX(300px); }
+          to   { opacity: 1; transform: translateX(0); }
         }
       `}</style>
     </section>
