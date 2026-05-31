@@ -125,10 +125,11 @@ export function Hero() {
           zIndex: 3,
           width: "100%",
           background: "rgba(10,10,10,0.85)",
+          borderTop: "1px solid #333",
           borderBottom: "1px solid rgba(255,255,255,0.08)",
           backdropFilter: "blur(8px)",
           overflow: "hidden",
-          padding: "16px 0",
+          padding: "14px 0",
           flexShrink: 0,
         }}
       >
