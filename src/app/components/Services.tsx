@@ -182,6 +182,8 @@ export function Services() {
         overflow: "hidden",
       }}
     >
+      {/* Overlay */}
+      <div style={{ position: "absolute", inset: 0, background: "rgba(0, 20, 50, 0.70)", pointerEvents: "none" }} />
       <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         {/* Section header */}
         <div
