@@ -57,22 +57,22 @@ export function Footer() {
                   borderRadius: "4px",
                   fontWeight: 900,
                   color: "#fff",
-                  fontSize: "11px",
+                  fontSize: "16px",
                   letterSpacing: "1px",
                 }}
               >
                 ISN
               </div>
               <div>
-                <span style={{ color: "#fff", fontWeight: 800, fontSize: "16px", letterSpacing: "2px" }}>ISN</span>
-                <span style={{ color: "#00d4ff", fontWeight: 800, fontSize: "16px", letterSpacing: "2px" }}>GROUP</span>
+                <span style={{ color: "#fff", fontWeight: 800, fontSize: "21px", letterSpacing: "2px" }}>ISN</span>
+                <span style={{ color: "#00d4ff", fontWeight: 800, fontSize: "21px", letterSpacing: "2px" }}>GROUP</span>
               </div>
             </div>
 
             <p
               style={{
                 color: "rgba(255,255,255,0.4)",
-                fontSize: "13px",
+                fontSize: "18px",
                 lineHeight: 1.7,
                 marginBottom: "24px",
                 fontWeight: 300,
@@ -92,14 +92,14 @@ export function Footer() {
                   {item.href ? (
                     <a
                       href={item.href}
-                      style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: "13px" }}
+                      style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: "18px" }}
                       onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#00d4ff")}
                       onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "rgba(255,255,255,0.5)")}
                     >
                       {item.text}
                     </a>
                   ) : (
-                    <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px" }}>{item.text}</span>
+                    <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "18px" }}>{item.text}</span>
                   )}
                 </div>
               ))}
@@ -111,7 +111,7 @@ export function Footer() {
             <h4
               style={{
                 color: "#fff",
-                fontSize: "12px",
+                fontSize: "17px",
                 fontWeight: 700,
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -130,7 +130,7 @@ export function Footer() {
                     style={{
                       color: "rgba(255,255,255,0.45)",
                       textDecoration: "none",
-                      fontSize: "13px",
+                      fontSize: "18px",
                       transition: "color 0.2s",
                       display: "flex",
                       alignItems: "center",
@@ -145,7 +145,7 @@ export function Footer() {
                       el.style.color = "rgba(255,255,255,0.45)";
                     }}
                   >
-                    <span style={{ color: "#00d4ff", fontSize: "10px" }}>▶</span>
+                    <span style={{ color: "#00d4ff", fontSize: "15px" }}>▶</span>
                     {s}
                   </a>
                 </li>
@@ -158,7 +158,7 @@ export function Footer() {
             <h4
               style={{
                 color: "#fff",
-                fontSize: "12px",
+                fontSize: "17px",
                 fontWeight: 700,
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -177,7 +177,7 @@ export function Footer() {
                     style={{
                       color: "rgba(255,255,255,0.45)",
                       textDecoration: "none",
-                      fontSize: "13px",
+                      fontSize: "18px",
                       transition: "color 0.2s",
                     }}
                     onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#00d4ff")}
@@ -193,7 +193,7 @@ export function Footer() {
             <h4
               style={{
                 color: "#fff",
-                fontSize: "12px",
+                fontSize: "17px",
                 fontWeight: 700,
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -256,10 +256,10 @@ export function Footer() {
             gap: "12px",
           }}
         >
-          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "12px", margin: 0 }}>
+          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "17px", margin: 0 }}>
             © 2026 ISN Group — Tous droits réservés
           </p>
-          <p style={{ color: "rgba(255,255,255,0.2)", fontSize: "12px", margin: 0 }}>
+          <p style={{ color: "rgba(255,255,255,0.2)", fontSize: "17px", margin: 0 }}>
             Innovative Systems & Networks — SIRET : 000 000 000 00000
           </p>
         </div>
