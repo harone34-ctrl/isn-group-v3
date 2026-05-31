@@ -281,12 +281,12 @@ export function Hero() {
         {/* Sous-titre */}
         <p
           style={{
-            color: "rgba(255,255,255,0.6)",
-            fontSize: "clamp(15px, 2vw, 18px)",
+            color: "#ffffff",
+            fontSize: "14px",
             lineHeight: 1.7,
             maxWidth: "680px",
             margin: "0 auto 40px",
-            fontWeight: 300,
+            fontWeight: 700,
           }}
         >
           Support informatique, infogérance MSP et architecture réseau
