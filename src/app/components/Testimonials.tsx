@@ -114,13 +114,13 @@ export function Testimonials() {
                   color: "rgba(0,212,255,0.12)",
                 }}
               >
-                <Quote size={40} />
+                <Quote size={45} />
               </div>
 
               {/* Stars */}
               <div style={{ display: "flex", gap: "4px" }}>
                 {[...Array(t.stars)].map((_, si) => (
-                  <Star key={si} size={14} fill="#00d4ff" color="#00d4ff" />
+                  <Star key={si} size={19} fill="#00d4ff" color="#00d4ff" />
                 ))}
               </div>
 
@@ -128,7 +128,7 @@ export function Testimonials() {
               <p
                 style={{
                   color: "rgba(255,255,255,0.65)",
-                  fontSize: "14px",
+                  fontSize: "19px",
                   lineHeight: 1.8,
                   fontWeight: 300,
                   fontStyle: "italic",
@@ -159,8 +159,8 @@ export function Testimonials() {
                   {t.initials}
                 </div>
                 <div>
-                  <div style={{ color: "#fff", fontWeight: 600, fontSize: "14px" }}>{t.name}</div>
-                  <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "12px", letterSpacing: "0.5px" }}>
+                  <div style={{ color: "#fff", fontWeight: 600, fontSize: "19px" }}>{t.name}</div>
+                  <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "17px", letterSpacing: "0.5px" }}>
                     {t.role} — {t.company}
                   </div>
                 </div>
