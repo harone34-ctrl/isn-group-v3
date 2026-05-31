@@ -55,7 +55,7 @@ export function Contact() {
     <section
       id="contact"
       style={{
-        backgroundImage: "url('/imgfd4.png')",
+        backgroundImage: "url('/imgfd4.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundColor: "#0a0f1e",
