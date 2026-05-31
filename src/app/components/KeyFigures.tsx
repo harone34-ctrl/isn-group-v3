@@ -83,41 +83,12 @@ export function KeyFigures() {
   return (
     <section
       style={{
-        backgroundImage: "url('/image-fond-5.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundColor: "#0d1526",
+        background: "#0d1526",
         padding: "80px 24px",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Subtle server rack background photo */}
-      <img
-        src="https://images.unsplash.com/photo-1698668975271-2ba9a323be6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600"
-        alt=""
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center",
-          opacity: 0.06,
-          filter: "saturate(0) brightness(0.8)",
-          pointerEvents: "none",
-        }}
-      />
-      {/* Overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(5, 10, 25, 0.35)",
-          pointerEvents: "none",
-        }}
-      />
       <div style={{ maxWidth: "1100px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div
           style={{
