@@ -179,23 +179,6 @@ export function Services() {
         overflow: "hidden",
       }}
     >
-      {/* Faint circuit board background */}
-      <img
-        src="https://images.unsplash.com/photo-1675602488453-c3897a475af5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600"
-        alt=""
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center",
-          opacity: 0.04,
-          filter: "saturate(0) brightness(1.2)",
-          pointerEvents: "none",
-        }}
-      />
       <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         {/* Section header */}
         <div
