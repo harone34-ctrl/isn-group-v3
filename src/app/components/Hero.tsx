@@ -287,6 +287,8 @@ export function Hero() {
             maxWidth: "680px",
             margin: "0 auto 40px",
             fontWeight: 700,
+            textTransform: "uppercase",
+            letterSpacing: "1px",
           }}
         >
           Support informatique, infogérance MSP et architecture réseau
