@@ -62,13 +62,13 @@ export function Hero() {
         }}
       />
 
-      {/* Dark overlay gradient — keeps text crisp */}
+      {/* Dark overlay gradient */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(135deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.78) 50%, rgba(10,10,10,0.92) 100%)",
+            "linear-gradient(135deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.40) 50%, rgba(10,10,10,0.55) 100%)",
         }}
       />
 
@@ -118,11 +118,41 @@ export function Hero() {
         style={{
           position: "relative",
           zIndex: 2,
-          textAlign: "center",
-          maxWidth: "900px",
+          maxWidth: "1200px",
+          width: "100%",
           padding: "0 24px",
+          display: "flex",
+          alignItems: "center",
+          gap: "64px",
         }}
       >
+        {/* Image desktop — droite */}
+        <div
+          className="hero-image-col"
+          style={{
+            flexShrink: 0,
+            width: "380px",
+            order: 2,
+          }}
+        >
+          <img
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600"
+            alt="Serveur datacenter professionnel"
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              objectPosition: "center",
+              borderRadius: "12px",
+              border: "2px solid #e63946",
+              boxShadow: "0 0 40px rgba(230,57,70,0.45), 0 0 80px rgba(230,57,70,0.15)",
+              display: "block",
+            }}
+          />
+        </div>
+
+        {/* Texte — gauche */}
+        <div style={{ flex: 1, textAlign: "center", order: 1 }}>
         {/* Badge */}
         <div
           style={{
@@ -201,7 +231,7 @@ export function Hero() {
         </p>
 
         {/* CTA buttons */}
-        <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap", order: 1 }}>
           <a
             href="#contact"
             style={{
@@ -265,6 +295,7 @@ export function Hero() {
             Découvrir nos services
           </a>
         </div>
+        </div>{/* fin texte */}
       </div>
 
       {/* Scroll indicator */}
@@ -292,6 +323,9 @@ export function Hero() {
       </a>
 
       <style>{`
+        @media (max-width: 900px) {
+          .hero-image-col { display: none !important; }
+        }
         @keyframes blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }
