@@ -70,7 +70,11 @@ export function Hero() {
       id="accueil"
       style={{
         minHeight: "100vh",
-        background: "#0a0f1e",
+        backgroundImage: "url('/image-fond-1.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        backgroundColor: "#0a0f1e",
         display: "flex",
         flexDirection: "column",
         position: "relative",
@@ -78,29 +82,12 @@ export function Hero() {
         paddingTop: "92px",
       }}
     >
-      {/* Background — datacenter */}
-      <img
-        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-        alt="Data center server cables"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center",
-          opacity: 0.22,
-          filter: "saturate(0.4) brightness(0.6)",
-        }}
-      />
-
       {/* Overlay */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background:
-            "linear-gradient(135deg, rgba(10,15,30,0.55) 0%, rgba(10,15,30,0.40) 50%, rgba(10,15,30,0.55) 100%)",
+          background: "rgba(10,15,30,0.5)",
         }}
       />
 
