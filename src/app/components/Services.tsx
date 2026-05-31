@@ -173,10 +173,7 @@ export function Services() {
     <section
       id="services"
       style={{
-        backgroundImage: "url('/image-fond-2.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundColor: "#0a0f1e",
+        background: "#111d35",
         padding: "100px 24px",
         position: "relative",
         overflow: "hidden",
@@ -196,15 +193,6 @@ export function Services() {
           objectPosition: "center",
           opacity: 0.04,
           filter: "saturate(0) brightness(1.2)",
-          pointerEvents: "none",
-        }}
-      />
-      {/* Overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(0, 20, 50, 0.80)",
           pointerEvents: "none",
         }}
       />
