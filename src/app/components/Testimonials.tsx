@@ -44,9 +44,10 @@ export function Testimonials() {
   return (
     <section
       style={{
-        background: "#111d35",
+        background: "linear-gradient(135deg, #0d1526 0%, #0a2a4a 50%, #0d1526 100%)",
+        borderTop: "1px solid rgba(0, 212, 255, 0.3)",
+        borderBottom: "1px solid rgba(0, 212, 255, 0.3)",
         padding: "100px 24px",
-        borderTop: "1px solid rgba(0,212,255,0.1)",
       }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
