@@ -221,6 +221,7 @@ export function Hero() {
             borderBottom: "1px solid rgba(0,212,255,0.2)",
             padding: "12px 0",
             width: "25%",
+            background: "rgba(0,0,0,0.20)",
           }}
         >
           <div style={{
