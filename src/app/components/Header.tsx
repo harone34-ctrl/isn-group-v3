@@ -34,19 +34,19 @@ export function Header() {
       >
         <a
           href="tel:0767804247"
-          style={{ color: "#0a0f1e", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", fontSize: "13px" }}
+          style={{ color: "#0a0f1e", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", fontSize: "14px" }}
         >
           <Phone size={13} />
           07 67 80 42 47
         </a>
         <a
           href="mailto:contact@isngroup.fr"
-          style={{ color: "#0a0f1e", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", fontSize: "13px" }}
+          style={{ color: "#0a0f1e", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", fontSize: "14px" }}
         >
           <Mail size={13} />
           contact@isngroup.fr
         </a>
-        <span style={{ color: "#0a0f1e", display: "flex", alignItems: "center", gap: "6px", fontSize: "13px" }}>
+        <span style={{ color: "#0a0f1e", display: "flex", alignItems: "center", gap: "6px", fontSize: "14px" }}>
           <Clock size={13} />
           Lun–Ven 9h–18h
         </span>
