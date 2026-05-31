@@ -186,6 +186,7 @@ export function Hero() {
             border: "1px solid #f59e0b",
             borderRadius: "100px",
             padding: "6px 16px",
+            marginTop: "-10px",
             marginBottom: "70px",
           }}
         >
@@ -216,7 +217,7 @@ export function Hero() {
           style={{
             position: "relative",
             overflow: "hidden",
-            marginTop: "-20px",
+            marginTop: "-28px",
             marginBottom: "32px",
             borderTop: "1px solid rgba(0,212,255,0.2)",
             borderBottom: "1px solid rgba(0,212,255,0.2)",
