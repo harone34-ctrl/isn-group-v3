@@ -173,7 +173,10 @@ export function Services() {
     <section
       id="services"
       style={{
-        background: "#0a0f1e",
+        backgroundImage: "url('/image-fond-2.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundColor: "#0a0f1e",
         padding: "100px 24px",
         position: "relative",
         overflow: "hidden",
@@ -201,7 +204,7 @@ export function Services() {
         style={{
           position: "absolute",
           inset: 0,
-          background: "rgba(10, 15, 30, 0.65)",
+          background: "rgba(0, 20, 50, 0.80)",
           pointerEvents: "none",
         }}
       />

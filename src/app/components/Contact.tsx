@@ -55,12 +55,25 @@ export function Contact() {
     <section
       id="contact"
       style={{
-        background: "#0a0f1e",
+        backgroundImage: "url('/image-fond-4.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundColor: "#0a0f1e",
         padding: "100px 24px",
         borderTop: "1px solid rgba(0,212,255,0.1)",
+        position: "relative",
       }}
     >
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      {/* Overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(0, 15, 35, 0.78)",
+          pointerEvents: "none",
+        }}
+      />
+      <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "64px" }}>
           <div
