@@ -79,7 +79,7 @@ export function Hero() {
         flexDirection: "column",
         position: "relative",
         overflow: "hidden",
-        paddingTop: "92px",
+        paddingTop: "0px",
       }}
     >
       {/* Overlay */}
@@ -116,7 +116,7 @@ export function Hero() {
           borderBottom: "1px solid rgba(255,255,255,0.1)",
           backdropFilter: "blur(8px)",
           overflow: "hidden",
-          marginTop: "56px",
+          marginTop: "156px",
           marginBottom: "56px",
           paddingTop: "12px",
           paddingBottom: "12px",
@@ -173,7 +173,7 @@ export function Hero() {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          padding: "40px 24px 80px",
+          padding: "20px 24px 80px",
         }}
       >
         {/* Badge */}
@@ -186,7 +186,7 @@ export function Hero() {
             border: "1px solid #f59e0b",
             borderRadius: "100px",
             padding: "6px 16px",
-            marginBottom: "32px",
+            marginBottom: "70px",
           }}
         >
           <div
@@ -201,7 +201,7 @@ export function Hero() {
           <span
             style={{
               color: "#f59e0b",
-              fontSize: "12px",
+              fontSize: "17px",
               letterSpacing: "2px",
               textTransform: "uppercase",
               fontWeight: 600,
@@ -216,6 +216,7 @@ export function Hero() {
           style={{
             position: "relative",
             overflow: "hidden",
+            marginTop: "-20px",
             marginBottom: "32px",
             borderTop: "1px solid rgba(0,212,255,0.2)",
             borderBottom: "1px solid rgba(0,212,255,0.2)",

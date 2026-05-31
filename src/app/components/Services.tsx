@@ -71,7 +71,7 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
         background: "#0d1526",
         border: hovered ? "1px solid #00d4ff" : "1px solid rgba(255,255,255,0.06)",
         borderRadius: "6px",
-        padding: "36px 28px",
+        padding: "16px 28px 36px",
         transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)",
         cursor: "default",
         boxShadow: hovered ? "0 0 28px rgba(0,212,255,0.18), inset 0 0 0 1px rgba(0,212,255,0.1)" : "none",
