@@ -92,7 +92,7 @@ export function Hero() {
           borderBottom: "1px solid rgba(255,255,255,0.08)",
           backdropFilter: "blur(8px)",
           overflow: "hidden",
-          padding: "10px 0",
+          padding: "12px 0",
           flexShrink: 0,
         }}
       >
@@ -192,8 +192,7 @@ export function Hero() {
             borderTop: "1px solid rgba(230,57,70,0.2)",
             borderBottom: "1px solid rgba(230,57,70,0.2)",
             padding: "12px 0",
-            width: "100%",
-            maxWidth: "860px",
+            width: "60%",
           }}
         >
           <div style={{
