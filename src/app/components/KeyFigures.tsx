@@ -83,7 +83,9 @@ export function KeyFigures() {
   return (
     <section
       style={{
-        background: "#0d1526",
+        background: "linear-gradient(135deg, #0d1526 0%, #0a2a4a 50%, #0d1526 100%)",
+        borderTop: "1px solid rgba(0, 212, 255, 0.3)",
+        borderBottom: "1px solid rgba(0, 212, 255, 0.3)",
         padding: "80px 24px",
         position: "relative",
         overflow: "hidden",
