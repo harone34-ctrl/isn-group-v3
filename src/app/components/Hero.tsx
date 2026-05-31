@@ -82,44 +82,54 @@ export function Hero() {
         }}
       />
 
-      {/* ── Ticker pleine largeur ── */}
+      {/* ── Strip logos pleine largeur ── */}
       <div
         style={{
           position: "relative",
           zIndex: 3,
           width: "100%",
-          background: "rgba(10,10,10,0.6)",
-          borderBottom: "1px solid rgba(230,57,70,0.25)",
+          background: "rgba(10,10,10,0.85)",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
           backdropFilter: "blur(8px)",
           overflow: "hidden",
           padding: "10px 0",
           flexShrink: 0,
         }}
       >
+        <div style={{
+          position: "absolute", left: 0, top: 0, bottom: 0, width: "80px",
+          background: "linear-gradient(to right, #0a0a0a, transparent)",
+          zIndex: 2, pointerEvents: "none",
+        }} />
+        <div style={{
+          position: "absolute", right: 0, top: 0, bottom: 0, width: "80px",
+          background: "linear-gradient(to left, #0a0a0a, transparent)",
+          zIndex: 2, pointerEvents: "none",
+        }} />
         <div
           style={{
             display: "flex",
-            gap: "0",
-            animation: "ticker-scroll 22s linear infinite",
+            gap: "52px",
+            animation: "hero-marquee 28s linear infinite",
             width: "max-content",
           }}
         >
-          {TICKER_ITEMS.map((word, i) => (
-            <span
+          {DOUBLED.map((logo, i) => (
+            <div
               key={i}
               style={{
-                color: "#e63946",
-                fontSize: "clamp(13px, 1.6vw, 17px)",
-                fontWeight: 800,
-                letterSpacing: "3px",
-                textTransform: "uppercase",
+                display: "flex",
+                alignItems: "center",
+                gap: "7px",
                 whiteSpace: "nowrap",
-                paddingRight: "36px",
+                opacity: 0.7,
               }}
             >
-              {word}
-              <span style={{ marginLeft: "36px", opacity: 0.5 }}>•</span>
-            </span>
+              <div style={{ width: 7, height: 7, borderRadius: "50%", background: logo.color, flexShrink: 0 }} />
+              <span style={{ color: "#ffffff", fontSize: "12px", fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase" }}>
+                {logo.name}
+              </span>
+            </div>
           ))}
         </div>
       </div>
@@ -173,69 +183,52 @@ export function Hero() {
           </span>
         </div>
 
-        {/* Logo strip */}
+        {/* Ticker texte rouge */}
         <div
           style={{
             position: "relative",
             overflow: "hidden",
             marginBottom: "32px",
-            borderTop: "1px solid rgba(255,255,255,0.08)",
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
+            borderTop: "1px solid rgba(230,57,70,0.2)",
+            borderBottom: "1px solid rgba(230,57,70,0.2)",
             padding: "12px 0",
             width: "100%",
             maxWidth: "860px",
           }}
         >
           <div style={{
-            position: "absolute", left: 0, top: 0, bottom: 0, width: "80px",
+            position: "absolute", left: 0, top: 0, bottom: 0, width: "60px",
             background: "linear-gradient(to right, rgba(10,10,10,0.9), transparent)",
             zIndex: 2, pointerEvents: "none",
           }} />
           <div style={{
-            position: "absolute", right: 0, top: 0, bottom: 0, width: "80px",
+            position: "absolute", right: 0, top: 0, bottom: 0, width: "60px",
             background: "linear-gradient(to left, rgba(10,10,10,0.9), transparent)",
             zIndex: 2, pointerEvents: "none",
           }} />
           <div
             style={{
               display: "flex",
-              gap: "36px",
-              animation: "hero-marquee 28s linear infinite",
+              animation: "ticker-scroll 22s linear infinite",
               width: "max-content",
             }}
           >
-            {DOUBLED.map((logo, i) => (
-              <div
+            {TICKER_ITEMS.map((word, i) => (
+              <span
                 key={i}
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "7px",
+                  color: "#e63946",
+                  fontSize: "12px",
+                  fontWeight: 800,
+                  letterSpacing: "3px",
+                  textTransform: "uppercase",
                   whiteSpace: "nowrap",
-                  opacity: 0.6,
+                  paddingRight: "36px",
                 }}
               >
-                <div
-                  style={{
-                    width: 7,
-                    height: 7,
-                    borderRadius: "50%",
-                    background: logo.color,
-                    flexShrink: 0,
-                  }}
-                />
-                <span
-                  style={{
-                    color: "#ffffff",
-                    fontSize: "12px",
-                    fontWeight: 600,
-                    letterSpacing: "1.5px",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {logo.name}
-                </span>
-              </div>
+                {word}
+                <span style={{ marginLeft: "36px", opacity: 0.5 }}>•</span>
+              </span>
             ))}
           </div>
         </div>
