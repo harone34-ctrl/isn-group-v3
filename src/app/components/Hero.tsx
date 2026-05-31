@@ -265,7 +265,7 @@ export function Hero() {
         <h1
           style={{
             color: "#ffffff",
-            fontSize: "clamp(36px, 6vw, 72px)",
+            fontSize: "clamp(31px, 6vw, 67px)",
             fontWeight: 900,
             lineHeight: 1.1,
             textTransform: "uppercase",
