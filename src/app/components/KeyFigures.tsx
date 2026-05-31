@@ -83,7 +83,7 @@ export function KeyFigures() {
   return (
     <section
       style={{
-        backgroundImage: "url('/image-fond-5.png')",
+        backgroundImage: "url('/image-fond-5.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundColor: "#0d1526",
