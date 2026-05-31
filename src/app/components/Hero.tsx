@@ -182,7 +182,7 @@ export function Hero() {
             display: "inline-flex",
             alignItems: "center",
             gap: "8px",
-            background: "#1a1208",
+            background: "rgba(26, 18, 8, 0.80)",
             border: "1px solid #f59e0b",
             borderRadius: "100px",
             padding: "6px 16px",
