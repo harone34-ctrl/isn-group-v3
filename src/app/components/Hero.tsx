@@ -182,8 +182,8 @@ export function Hero() {
             display: "inline-flex",
             alignItems: "center",
             gap: "8px",
-            background: "rgba(0,212,255,0.12)",
-            border: "1px solid rgba(0,212,255,0.3)",
+            background: "#1a1208",
+            border: "1px solid #f59e0b",
             borderRadius: "100px",
             padding: "6px 16px",
             marginBottom: "32px",
@@ -194,13 +194,13 @@ export function Hero() {
               width: 6,
               height: 6,
               borderRadius: "50%",
-              background: "#00d4ff",
+              background: "#f59e0b",
               animation: "pulse-dot 1.5s infinite",
             }}
           />
           <span
             style={{
-              color: "#00d4ff",
+              color: "#f59e0b",
               fontSize: "12px",
               letterSpacing: "2px",
               textTransform: "uppercase",
@@ -244,7 +244,7 @@ export function Hero() {
               <span
                 key={i}
                 style={{
-                  color: "#00d4ff",
+                  color: "#f59e0b",
                   fontSize: "15px",
                   fontWeight: 800,
                   letterSpacing: "3px",
@@ -254,7 +254,7 @@ export function Hero() {
                 }}
               >
                 {word}
-                <span style={{ marginLeft: "36px", opacity: 0.5 }}>•</span>
+                <span style={{ marginLeft: "36px", opacity: 0.5, color: "#f59e0b" }}>•</span>
               </span>
             ))}
           </div>
