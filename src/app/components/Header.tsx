@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Phone, Mail, Clock, Menu, X } from "lucide-react";
-import { useLocation } from "react-router";
+import { useLocation, Link } from "react-router";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,15 +14,66 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // href = in-page anchor (starts with #) → plain <a>, browser handles smooth scroll
+  // href = page/cross-page route (starts with /) → <Link>, client-side navigation
   const navLinks = [
-    { label: "Accueil", href: isHome ? "#accueil" : "/" },
-    { label: "Services", href: isHome ? "#services" : "/#services" },
+    { label: "Accueil",        href: isHome ? "#accueil" : "/" },
+    { label: "Services",       href: isHome ? "#services" : "/#services" },
     { label: "Notre Approche", href: "/notre-approche" },
-    { label: "À propos", href: isHome ? "#apropos" : "/#apropos" },
-    { label: "Contact", href: isHome ? "#contact" : "/#contact" },
+    { label: "À propos",       href: isHome ? "#apropos" : "/#apropos" },
+    { label: "Contact",        href: isHome ? "#contact" : "/#contact" },
   ];
 
   const ctaHref = isHome ? "#contact" : "/#contact";
+
+  const linkStyle: React.CSSProperties = {
+    color: "#fff",
+    textDecoration: "none",
+    fontSize: "14px",
+    letterSpacing: "1px",
+    textTransform: "uppercase",
+    fontWeight: 500,
+    transition: "color 0.2s",
+    padding: "4px 0",
+    borderBottom: "2px solid transparent",
+  };
+
+  const hoverOn = (e: React.MouseEvent<HTMLElement>) => {
+    (e.currentTarget as HTMLElement).style.color = "#00d4ff";
+    (e.currentTarget as HTMLElement).style.borderBottomColor = "#00d4ff";
+  };
+  const hoverOff = (e: React.MouseEvent<HTMLElement>) => {
+    (e.currentTarget as HTMLElement).style.color = "#fff";
+    (e.currentTarget as HTMLElement).style.borderBottomColor = "transparent";
+  };
+
+  const renderNavLink = (link: { label: string; href: string }, onClick?: () => void) => {
+    const isPageRoute = link.href.startsWith("/");
+    if (isPageRoute) {
+      return (
+        <Link
+          to={link.href}
+          style={linkStyle}
+          onClick={onClick}
+          onMouseEnter={hoverOn}
+          onMouseLeave={hoverOff}
+        >
+          {link.label}
+        </Link>
+      );
+    }
+    return (
+      <a
+        href={link.href}
+        style={linkStyle}
+        onClick={onClick}
+        onMouseEnter={hoverOn}
+        onMouseLeave={hoverOff}
+      >
+        {link.label}
+      </a>
+    );
+  };
 
   return (
     <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000 }}>
@@ -73,7 +124,7 @@ export function Header() {
         }}
       >
         {/* Logo */}
-        <a href={isHome ? "#accueil" : "/"} style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
+        <Link to={isHome ? "/" : "/"} style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
           <div
             style={{
               width: 36,
@@ -95,89 +146,79 @@ export function Header() {
             <span style={{ color: "#fff", fontWeight: 800, fontSize: "18px", letterSpacing: "2px" }}>ISN</span>
             <span style={{ color: "#00d4ff", fontWeight: 800, fontSize: "18px", letterSpacing: "2px" }}>GROUP</span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <ul
-          style={{
-            display: "flex",
-            listStyle: "none",
-            margin: 0,
-            padding: 0,
-            gap: "32px",
-            alignItems: "center",
-          }}
+          style={{ display: "flex", listStyle: "none", margin: 0, padding: 0, gap: "32px", alignItems: "center" }}
           className="hidden-mobile"
         >
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  fontSize: "14px",
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  fontWeight: 500,
-                  transition: "color 0.2s",
-                  padding: "4px 0",
-                  borderBottom: "2px solid transparent",
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLAnchorElement).style.color = "#00d4ff";
-                  (e.target as HTMLAnchorElement).style.borderBottomColor = "#00d4ff";
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLAnchorElement).style.color = "#fff";
-                  (e.target as HTMLAnchorElement).style.borderBottomColor = "transparent";
-                }}
-              >
-                {link.label}
-              </a>
-            </li>
+            <li key={link.label}>{renderNavLink(link)}</li>
           ))}
           <li>
-            <a
-              href={ctaHref}
-              style={{
-                background: "#00d4ff",
-                color: "#0a0f1e",
-                textDecoration: "none",
-                padding: "10px 20px",
-                fontSize: "13px",
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-                fontWeight: 700,
-                borderRadius: "3px",
-                transition: "background 0.2s, transform 0.2s",
-                display: "inline-block",
-              }}
-              onMouseEnter={(e) => {
-                (e.target as HTMLAnchorElement).style.background = "#0099cc";
-                (e.target as HTMLAnchorElement).style.transform = "translateY(-1px)";
-              }}
-              onMouseLeave={(e) => {
-                (e.target as HTMLAnchorElement).style.background = "#00d4ff";
-                (e.target as HTMLAnchorElement).style.transform = "translateY(0)";
-              }}
-            >
-              Demander un devis
-            </a>
+            {ctaHref.startsWith("/") ? (
+              <Link
+                to={ctaHref}
+                style={{
+                  background: "#00d4ff",
+                  color: "#0a0f1e",
+                  textDecoration: "none",
+                  padding: "10px 20px",
+                  fontSize: "13px",
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  fontWeight: 700,
+                  borderRadius: "3px",
+                  transition: "background 0.2s, transform 0.2s",
+                  display: "inline-block",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "#0099cc";
+                  (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "#00d4ff";
+                  (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                }}
+              >
+                Demander un devis
+              </Link>
+            ) : (
+              <a
+                href={ctaHref}
+                style={{
+                  background: "#00d4ff",
+                  color: "#0a0f1e",
+                  textDecoration: "none",
+                  padding: "10px 20px",
+                  fontSize: "13px",
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  fontWeight: 700,
+                  borderRadius: "3px",
+                  transition: "background 0.2s, transform 0.2s",
+                  display: "inline-block",
+                }}
+                onMouseEnter={(e) => {
+                  (e.target as HTMLAnchorElement).style.background = "#0099cc";
+                  (e.target as HTMLAnchorElement).style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.target as HTMLAnchorElement).style.background = "#00d4ff";
+                  (e.target as HTMLAnchorElement).style.transform = "translateY(0)";
+                }}
+              >
+                Demander un devis
+              </a>
+            )}
           </li>
         </ul>
 
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          style={{
-            background: "none",
-            border: "none",
-            color: "#fff",
-            cursor: "pointer",
-            display: "none",
-            padding: "4px",
-          }}
+          style={{ background: "none", border: "none", color: "#fff", cursor: "pointer", display: "none", padding: "4px" }}
           className="show-mobile"
           aria-label="Menu"
         >
@@ -198,43 +239,52 @@ export function Header() {
           }}
         >
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+            <div key={link.label}>
+              {renderNavLink(link, () => setMobileOpen(false))}
+            </div>
+          ))}
+          {ctaHref.startsWith("/") ? (
+            <Link
+              to={ctaHref}
               onClick={() => setMobileOpen(false)}
               style={{
-                color: "#fff",
+                background: "#00d4ff",
+                color: "#0a0f1e",
                 textDecoration: "none",
-                fontSize: "15px",
+                padding: "12px 20px",
+                fontSize: "13px",
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                fontWeight: 500,
-                padding: "8px 0",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
+                fontWeight: 700,
+                borderRadius: "3px",
+                textAlign: "center",
+                marginTop: "8px",
+                display: "block",
               }}
             >
-              {link.label}
+              Demander un devis
+            </Link>
+          ) : (
+            <a
+              href={ctaHref}
+              onClick={() => setMobileOpen(false)}
+              style={{
+                background: "#00d4ff",
+                color: "#0a0f1e",
+                textDecoration: "none",
+                padding: "12px 20px",
+                fontSize: "13px",
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                borderRadius: "3px",
+                textAlign: "center",
+                marginTop: "8px",
+              }}
+            >
+              Demander un devis
             </a>
-          ))}
-          <a
-            href={ctaHref}
-            onClick={() => setMobileOpen(false)}
-            style={{
-              background: "#00d4ff",
-              color: "#0a0f1e",
-              textDecoration: "none",
-              padding: "12px 20px",
-              fontSize: "13px",
-              letterSpacing: "1px",
-              textTransform: "uppercase",
-              fontWeight: 700,
-              borderRadius: "3px",
-              textAlign: "center",
-              marginTop: "8px",
-            }}
-          >
-            Demander un devis
-          </a>
+          )}
         </div>
       )}
 

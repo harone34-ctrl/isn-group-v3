@@ -134,8 +134,8 @@ export function Footer() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
               {SERVICES_LINKS.map((s) => (
                 <li key={s}>
-                  <a
-                    href="/#services"
+                  <Link
+                    to="/#services"
                     style={{
                       color: "rgba(255,255,255,0.45)",
                       textDecoration: "none",
@@ -146,15 +146,15 @@ export function Footer() {
                       gap: "6px",
                     }}
                     onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.color = "#00d4ff";
+                      (e.currentTarget as HTMLElement).style.color = "#00d4ff";
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.45)";
+                      (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)";
                     }}
                   >
                     <span style={{ color: "#00d4ff", fontSize: "15px" }}>▶</span>
                     {s}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -179,8 +179,8 @@ export function Footer() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     style={{
                       color: "rgba(255,255,255,0.45)",
                       textDecoration: "none",
@@ -191,15 +191,15 @@ export function Footer() {
                       gap: "6px",
                     }}
                     onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.color = "#00d4ff";
+                      (e.currentTarget as HTMLElement).style.color = "#00d4ff";
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.45)";
+                      (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)";
                     }}
                   >
                     <span style={{ color: "#00d4ff", fontSize: "15px" }}>▶</span>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
