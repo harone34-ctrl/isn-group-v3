@@ -17,6 +17,7 @@ export function Header() {
   const navLinks = [
     { label: "Accueil", href: isHome ? "#accueil" : "/" },
     { label: "Services", href: isHome ? "#services" : "/#services" },
+    { label: "Notre Approche", href: "/notre-approche" },
     { label: "À propos", href: isHome ? "#apropos" : "/#apropos" },
     { label: "Contact", href: isHome ? "#contact" : "/#contact" },
   ];
