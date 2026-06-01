@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { CheckCircle, Shield, Leaf, Cpu, Brain } from "lucide-react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -59,12 +60,26 @@ const SECTIONS = [
 ];
 
 export function NotreApproche() {
+  const SEO_TITLE = "Notre Approche IT — Maintenance Préventive & IA Locale | ISN Group";
+  const SEO_DESC =
+    "ISN Group adopte une approche IT responsable : maintenance préventive, Green IT, gestion de la pénurie de composants 2024-2026 et solutions IA locales on-premise en Gironde.";
+  const SEO_URL = "https://isn-group-v3.vercel.app/notre-approche";
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div style={{ background: "#0a0f1e", minHeight: "100vh" }}>
+      <Helmet>
+        <title>{SEO_TITLE}</title>
+        <meta name="description" content={SEO_DESC} />
+        <link rel="canonical" href={SEO_URL} />
+        <meta property="og:title" content={SEO_TITLE} />
+        <meta property="og:description" content={SEO_DESC} />
+        <meta property="og:url" content={SEO_URL} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
 
       {/* Page Banner */}
