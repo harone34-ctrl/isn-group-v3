@@ -1,9 +1,12 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Phone, Mail, Clock, Menu, X } from "lucide-react";
+import { useLocation } from "react-router";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -12,11 +15,13 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { label: "Accueil", href: "#accueil" },
-    { label: "Services", href: "#services" },
-    { label: "À propos", href: "#apropos" },
-    { label: "Contact", href: "#contact" },
+    { label: "Accueil", href: isHome ? "#accueil" : "/" },
+    { label: "Services", href: isHome ? "#services" : "/#services" },
+    { label: "À propos", href: isHome ? "#apropos" : "/#apropos" },
+    { label: "Contact", href: isHome ? "#contact" : "/#contact" },
   ];
+
+  const ctaHref = isHome ? "#contact" : "/#contact";
 
   return (
     <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000 }}>
@@ -67,7 +72,7 @@ export function Header() {
         }}
       >
         {/* Logo */}
-        <a href="#accueil" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
+        <a href={isHome ? "#accueil" : "/"} style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
           <div
             style={{
               width: 36,
@@ -133,7 +138,7 @@ export function Header() {
           ))}
           <li>
             <a
-              href="#contact"
+              href={ctaHref}
               style={{
                 background: "#00d4ff",
                 color: "#0a0f1e",
@@ -211,7 +216,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={ctaHref}
             onClick={() => setMobileOpen(false)}
             style={{
               background: "#00d4ff",

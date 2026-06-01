@@ -1,4 +1,5 @@
-﻿import { Phone, Mail, MapPin, Linkedin, Github } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin, Github } from "lucide-react";
+import { Link } from "react-router";
 
 const SERVICES_LINKS = [
   "Support & Dépannage",
@@ -10,16 +11,24 @@ const SERVICES_LINKS = [
 ];
 
 const LEGAL_LINKS = [
-  "Mentions légales",
-  "CGV",
-  "Politique de confidentialité",
-  "Plan du site",
+  { label: "Mentions légales", to: "/mentions-legales" },
+  { label: "CGV", to: "/cgv" },
+  { label: "Politique de confidentialité", to: "/politique-confidentialite" },
+  { label: "Plan du site", to: "/plan-du-site" },
+];
+
+const NAV_LINKS = [
+  { label: "Accueil", href: "/" },
+  { label: "Notre Approche", href: "/notre-approche" },
+  { label: "Services", href: "/#services" },
+  { label: "À propos", href: "/#apropos" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Footer() {
   return (
     <footer style={{ background: "#0a0f1e" }}>
-      {/* Red accent line */}
+      {/* Cyan accent line */}
       <div
         style={{
           height: "3px",
@@ -34,11 +43,11 @@ export function Footer() {
           padding: "64px 24px 40px",
         }}
       >
-        {/* 3-column grid */}
+        {/* 4-column grid */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: "48px",
             marginBottom: "56px",
           }}
@@ -126,7 +135,7 @@ export function Footer() {
               {SERVICES_LINKS.map((s) => (
                 <li key={s}>
                   <a
-                    href="#services"
+                    href="/#services"
                     style={{
                       color: "rgba(255,255,255,0.45)",
                       textDecoration: "none",
@@ -137,12 +146,10 @@ export function Footer() {
                       gap: "6px",
                     }}
                     onMouseEnter={(e) => {
-                      const el = e.currentTarget as HTMLAnchorElement;
-                      el.style.color = "#00d4ff";
+                      (e.currentTarget as HTMLAnchorElement).style.color = "#00d4ff";
                     }}
                     onMouseLeave={(e) => {
-                      const el = e.currentTarget as HTMLAnchorElement;
-                      el.style.color = "rgba(255,255,255,0.45)";
+                      (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.45)";
                     }}
                   >
                     <span style={{ color: "#00d4ff", fontSize: "15px" }}>▶</span>
@@ -153,7 +160,52 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 – Legal & Social */}
+          {/* Column 3 – Navigation */}
+          <div>
+            <h4
+              style={{
+                color: "#fff",
+                fontSize: "17px",
+                fontWeight: 700,
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+                marginBottom: "20px",
+                paddingBottom: "12px",
+                borderBottom: "1px solid rgba(0,212,255,0.2)",
+              }}
+            >
+              Navigation
+            </h4>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
+              {NAV_LINKS.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    style={{
+                      color: "rgba(255,255,255,0.45)",
+                      textDecoration: "none",
+                      fontSize: "18px",
+                      transition: "color 0.2s",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLAnchorElement).style.color = "#00d4ff";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.45)";
+                    }}
+                  >
+                    <span style={{ color: "#00d4ff", fontSize: "15px" }}>▶</span>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4 – Legal & Social */}
           <div>
             <h4
               style={{
@@ -171,20 +223,21 @@ export function Footer() {
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: "10px" }}>
               {LEGAL_LINKS.map((l) => (
-                <li key={l}>
-                  <a
-                    href="#"
+                <li key={l.label}>
+                  <Link
+                    to={l.to}
                     style={{
                       color: "rgba(255,255,255,0.45)",
                       textDecoration: "none",
                       fontSize: "18px",
                       transition: "color 0.2s",
+                      display: "block",
                     }}
                     onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#00d4ff")}
                     onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "rgba(255,255,255,0.45)")}
                   >
-                    {l}
-                  </a>
+                    {l.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -260,7 +313,7 @@ export function Footer() {
             © 2026 ISN Group — Tous droits réservés
           </p>
           <p style={{ color: "rgba(255,255,255,0.2)", fontSize: "17px", margin: 0 }}>
-            Innovative Systems & Networks — SIRET : 000 000 000 00000
+            Innovative Systems & Networks — SIRET : En cours d'immatriculation
           </p>
         </div>
       </div>
