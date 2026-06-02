@@ -72,12 +72,11 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
         border: hovered ? "1px solid #f6a623" : "1px solid rgba(255,255,255,0.06)",
         borderRadius: "6px",
         padding: "16px 28px 36px",
-        transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)",
+        transition: `opacity 0.35s cubic-bezier(0.4,0,0.2,1) ${index * 80}ms, transform 0.35s cubic-bezier(0.4,0,0.2,1) ${index * 80}ms, border 0.3s ease, box-shadow 0.3s ease`,
         cursor: "default",
         boxShadow: hovered ? "0 0 28px rgba(246,166,35,0.18), inset 0 0 0 1px rgba(246,166,35,0.1)" : "none",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(28px)",
-        transitionDelay: `${index * 80}ms`,
         display: "flex",
         flexDirection: "column",
         gap: "18px",
@@ -95,7 +94,7 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[0]; index:
           alignItems: "center",
           justifyContent: "center",
           color: hovered ? "#f6a623" : "#00d4ff",
-          transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)",
+          transition: "all 0.3s ease",
         }}
       >
         {service.icon}
