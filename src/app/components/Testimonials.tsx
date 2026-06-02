@@ -56,7 +56,7 @@ function TestimonialCard({
         boxShadow: hovered
           ? "0 0 28px rgba(246,166,35,0.18), inset 0 0 0 1px rgba(246,166,35,0.1)"
           : "none",
-        transition: `opacity 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 100}ms, transform 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 100}ms, border 0.35s, box-shadow 0.35s`,
+        transition: `opacity 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 100}ms, transform 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 100}ms, border 0.3s ease, box-shadow 0.3s ease`,
         position: "relative",
         cursor: "default",
       }}
@@ -67,16 +67,17 @@ function TestimonialCard({
           position: "absolute",
           top: "24px",
           right: "24px",
-          color: "rgba(0,212,255,0.12)",
+          color: hovered ? "#f6a623" : "#00bfff",
+          transition: "color 0.3s ease",
         }}
       >
         <Quote size={45} />
       </div>
 
       {/* Stars */}
-      <div style={{ display: "flex", gap: "4px" }}>
+      <div style={{ display: "flex", gap: "4px", color: hovered ? "#f6a623" : "#00bfff", transition: "color 0.3s ease" }}>
         {[...Array(t.stars)].map((_, si) => (
-          <Star key={si} size={19} fill={hovered ? "#f6a623" : "#00d4ff"} color={hovered ? "#f6a623" : "#00d4ff"} />
+          <Star key={si} size={19} fill="currentColor" color="currentColor" />
         ))}
       </div>
 
