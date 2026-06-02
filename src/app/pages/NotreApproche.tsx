@@ -1,12 +1,20 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Shield, Leaf, Cpu, Brain } from "lucide-react";
+import { CheckCircle, Shield, Leaf, Cpu, Brain, type LucideIcon } from "lucide-react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
-const SECTIONS = [
+interface Section {
+  Icon: LucideIcon;
+  label: string;
+  title: string;
+  content: string;
+  points: string[];
+}
+
+const SECTIONS: Section[] = [
   {
-    icon: <Shield size={28} color="#00d4ff" />,
+    Icon: Shield,
     label: "Philosophie",
     title: "Maintenance préventive",
     content:
@@ -19,7 +27,7 @@ const SECTIONS = [
     ],
   },
   {
-    icon: <Leaf size={28} color="#00d4ff" />,
+    Icon: Leaf,
     label: "Green IT",
     title: "Green IT & Économie circulaire",
     content:
@@ -32,7 +40,7 @@ const SECTIONS = [
     ],
   },
   {
-    icon: <Cpu size={28} color="#00d4ff" />,
+    Icon: Cpu,
     label: "Contexte marché",
     title: "Pénurie de composants 2024–2026",
     content:
@@ -45,7 +53,7 @@ const SECTIONS = [
     ],
   },
   {
-    icon: <Brain size={28} color="#00d4ff" />,
+    Icon: Brain,
     label: "IA Locale",
     title: "Solutions IA locales on-premise",
     content:
@@ -58,6 +66,160 @@ const SECTIONS = [
     ],
   },
 ];
+
+function SectionRow({
+  section,
+  isLast,
+}: {
+  section: Section;
+  isLast: boolean;
+}) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+        gap: "48px",
+        alignItems: "start",
+        marginBottom: !isLast ? "80px" : 0,
+        paddingBottom: !isLast ? "80px" : 0,
+        borderBottom: !isLast ? "1px solid rgba(0,212,255,0.1)" : "none",
+      }}
+    >
+      {/* Text column */}
+      <div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            marginBottom: "20px",
+          }}
+        >
+          <div
+            style={{
+              width: 52,
+              height: 52,
+              background: hovered ? "rgba(246,166,35,0.08)" : "rgba(0,212,255,0.08)",
+              border: hovered
+                ? "1px solid rgba(246,166,35,0.4)"
+                : "1px solid rgba(0,212,255,0.25)",
+              borderRadius: "8px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+              transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)",
+            }}
+          >
+            <section.Icon size={28} color={hovered ? "#f6a623" : "#00d4ff"} />
+          </div>
+          <div
+            style={{
+              color: "#00d4ff",
+              fontSize: "11px",
+              letterSpacing: "4px",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            {section.label}
+          </div>
+        </div>
+
+        <h2
+          style={{
+            color: "#ffffff",
+            fontSize: "clamp(20px, 2.5vw, 28px)",
+            fontWeight: 900,
+            textTransform: "uppercase",
+            letterSpacing: "1.5px",
+            lineHeight: 1.25,
+            marginBottom: "20px",
+          }}
+        >
+          {section.title}
+        </h2>
+
+        <p
+          style={{
+            color: "#ffffff",
+            fontSize: "15px",
+            lineHeight: 1.8,
+            fontWeight: 400,
+            textShadow: "0 1px 3px rgba(0,0,0,0.5)",
+          }}
+        >
+          {section.content}
+        </p>
+      </div>
+
+      {/* Key points card */}
+      <div
+        style={{
+          background: "#0d1526",
+          border: hovered ? "1px solid #f6a623" : "1px solid rgba(0,212,255,0.15)",
+          borderRadius: "8px",
+          padding: "32px",
+          transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)",
+          boxShadow: hovered
+            ? "0 0 28px rgba(246,166,35,0.18), inset 0 0 0 1px rgba(246,166,35,0.1)"
+            : "none",
+        }}
+      >
+        <div
+          style={{
+            color: "#00d4ff",
+            fontSize: "11px",
+            letterSpacing: "3px",
+            textTransform: "uppercase",
+            fontWeight: 600,
+            marginBottom: "20px",
+            paddingBottom: "12px",
+            borderBottom: "1px solid rgba(0,212,255,0.15)",
+          }}
+        >
+          Points clés
+        </div>
+        <ul
+          style={{
+            listStyle: "none",
+            padding: 0,
+            margin: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: "14px",
+          }}
+        >
+          {section.points.map((point) => (
+            <li
+              key={point}
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "12px",
+                color: "#ffffff",
+                fontSize: "15px",
+                lineHeight: 1.5,
+              }}
+            >
+              <CheckCircle
+                size={15}
+                color="#00d4ff"
+                style={{ marginTop: "2px", flexShrink: 0 }}
+              />
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
 
 export function NotreApproche() {
   const SEO_TITLE = "Notre Approche IT — Maintenance Préventive & IA Locale | ISN Group";
@@ -135,140 +297,11 @@ export function NotreApproche() {
       {/* Content Sections */}
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "80px 24px" }}>
         {SECTIONS.map((section, i) => (
-          <div
+          <SectionRow
             key={section.title}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "48px",
-              alignItems: "start",
-              marginBottom: i < SECTIONS.length - 1 ? "80px" : 0,
-              paddingBottom: i < SECTIONS.length - 1 ? "80px" : 0,
-              borderBottom:
-                i < SECTIONS.length - 1 ? "1px solid rgba(0,212,255,0.1)" : "none",
-            }}
-          >
-            {/* Text column */}
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "12px",
-                  marginBottom: "20px",
-                }}
-              >
-                <div
-                  style={{
-                    width: 52,
-                    height: 52,
-                    background: "rgba(0,212,255,0.08)",
-                    border: "1px solid rgba(0,212,255,0.25)",
-                    borderRadius: "8px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}
-                >
-                  {section.icon}
-                </div>
-                <div
-                  style={{
-                    color: "#00d4ff",
-                    fontSize: "11px",
-                    letterSpacing: "4px",
-                    textTransform: "uppercase",
-                    fontWeight: 600,
-                  }}
-                >
-                  {section.label}
-                </div>
-              </div>
-
-              <h2
-                style={{
-                  color: "#ffffff",
-                  fontSize: "clamp(20px, 2.5vw, 28px)",
-                  fontWeight: 900,
-                  textTransform: "uppercase",
-                  letterSpacing: "1.5px",
-                  lineHeight: 1.25,
-                  marginBottom: "20px",
-                }}
-              >
-                {section.title}
-              </h2>
-
-              <p
-                style={{
-                  color: "#ffffff",
-                  fontSize: "15px",
-                  lineHeight: 1.8,
-                  fontWeight: 400,
-                  textShadow: "0 1px 3px rgba(0,0,0,0.5)",
-                }}
-              >
-                {section.content}
-              </p>
-            </div>
-
-            {/* Key points card */}
-            <div
-              style={{
-                background: "#0d1526",
-                border: "1px solid rgba(0,212,255,0.15)",
-                borderRadius: "8px",
-                padding: "32px",
-              }}
-            >
-              <div
-                style={{
-                  color: "#00d4ff",
-                  fontSize: "11px",
-                  letterSpacing: "3px",
-                  textTransform: "uppercase",
-                  fontWeight: 600,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
-                  borderBottom: "1px solid rgba(0,212,255,0.15)",
-                }}
-              >
-                Points clés
-              </div>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "14px",
-                }}
-              >
-                {section.points.map((point) => (
-                  <li
-                    key={point}
-                    style={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: "12px",
-                      color: "#ffffff",
-                      fontSize: "15px",
-                      lineHeight: 1.5,
-                    }}
-                  >
-                    <CheckCircle
-                      size={15}
-                      color="#00d4ff"
-                      style={{ marginTop: "2px", flexShrink: 0 }}
-                    />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            section={section}
+            isLast={i === SECTIONS.length - 1}
+          />
         ))}
       </div>
 

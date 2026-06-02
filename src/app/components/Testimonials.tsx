@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Star, Quote } from "lucide-react";
 
 const TESTIMONIALS = [
@@ -27,6 +27,103 @@ const TESTIMONIALS = [
     initials: "TM",
   },
 ];
+
+function TestimonialCard({
+  t,
+  i,
+  visible,
+}: {
+  t: (typeof TESTIMONIALS)[0];
+  i: number;
+  visible: boolean;
+}) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: "#0a0f1e",
+        border: hovered ? "1px solid #f6a623" : "1px solid rgba(255,255,255,0.06)",
+        borderRadius: "6px",
+        padding: "36px 28px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(24px)",
+        boxShadow: hovered
+          ? "0 0 28px rgba(246,166,35,0.18), inset 0 0 0 1px rgba(246,166,35,0.1)"
+          : "none",
+        transition: `opacity 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 100}ms, transform 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 100}ms, border 0.35s, box-shadow 0.35s`,
+        position: "relative",
+        cursor: "default",
+      }}
+    >
+      {/* Quote icon */}
+      <div
+        style={{
+          position: "absolute",
+          top: "24px",
+          right: "24px",
+          color: "rgba(0,212,255,0.12)",
+        }}
+      >
+        <Quote size={45} />
+      </div>
+
+      {/* Stars */}
+      <div style={{ display: "flex", gap: "4px" }}>
+        {[...Array(t.stars)].map((_, si) => (
+          <Star key={si} size={19} fill="#00d4ff" color="#00d4ff" />
+        ))}
+      </div>
+
+      {/* Text */}
+      <p
+        style={{
+          color: "rgba(255,255,255,0.65)",
+          fontSize: "19px",
+          lineHeight: 1.8,
+          fontWeight: 300,
+          fontStyle: "italic",
+          margin: 0,
+        }}
+      >
+        "{t.text}"
+      </p>
+
+      {/* Author */}
+      <div style={{ display: "flex", alignItems: "center", gap: "14px", marginTop: "auto" }}>
+        <div
+          style={{
+            width: 44,
+            height: 44,
+            background: "rgba(246,166,35,0.15)",
+            border: "1px solid rgba(246,166,35,0.4)",
+            borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#f6a623",
+            fontWeight: 700,
+            fontSize: "14px",
+            flexShrink: 0,
+          }}
+        >
+          {t.initials}
+        </div>
+        <div>
+          <div style={{ color: "#fff", fontWeight: 600, fontSize: "19px" }}>{t.name}</div>
+          <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "17px", letterSpacing: "0.5px" }}>
+            {t.role} — {t.company}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function Testimonials() {
   const [visible, setVisible] = useState(false);
@@ -89,83 +186,7 @@ export function Testimonials() {
           }}
         >
           {TESTIMONIALS.map((t, i) => (
-            <div
-              key={t.name}
-              style={{
-                background: "#0a0f1e",
-                border: "1px solid rgba(255,255,255,0.06)",
-                borderRadius: "6px",
-                padding: "36px 28px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(24px)",
-                transition: `all 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 100}ms`,
-                position: "relative",
-              }}
-            >
-              {/* Quote icon */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "24px",
-                  right: "24px",
-                  color: "rgba(0,212,255,0.12)",
-                }}
-              >
-                <Quote size={45} />
-              </div>
-
-              {/* Stars */}
-              <div style={{ display: "flex", gap: "4px" }}>
-                {[...Array(t.stars)].map((_, si) => (
-                  <Star key={si} size={19} fill="#00d4ff" color="#00d4ff" />
-                ))}
-              </div>
-
-              {/* Text */}
-              <p
-                style={{
-                  color: "rgba(255,255,255,0.65)",
-                  fontSize: "19px",
-                  lineHeight: 1.8,
-                  fontWeight: 300,
-                  fontStyle: "italic",
-                  margin: 0,
-                }}
-              >
-                "{t.text}"
-              </p>
-
-              {/* Author */}
-              <div style={{ display: "flex", alignItems: "center", gap: "14px", marginTop: "auto" }}>
-                <div
-                  style={{
-                    width: 44,
-                    height: 44,
-                    background: "rgba(0,212,255,0.15)",
-                    border: "1px solid rgba(0,212,255,0.3)",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#00d4ff",
-                    fontWeight: 700,
-                    fontSize: "14px",
-                    flexShrink: 0,
-                  }}
-                >
-                  {t.initials}
-                </div>
-                <div>
-                  <div style={{ color: "#fff", fontWeight: 600, fontSize: "19px" }}>{t.name}</div>
-                  <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "17px", letterSpacing: "0.5px" }}>
-                    {t.role} — {t.company}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TestimonialCard key={t.name} t={t} i={i} visible={visible} />
           ))}
         </div>
       </div>
