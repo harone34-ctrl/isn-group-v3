@@ -28,7 +28,7 @@ export function About() {
       style={{
         backgroundImage: "url('/imgfd3.jpg')",
         backgroundSize: "cover",
-        backgroundPosition: "center top",
+        backgroundPosition: "center",
         backgroundColor: "#0d1526",
         padding: "100px 24px 160px",
         borderTop: "1px solid rgba(0,212,255,0.1)",
