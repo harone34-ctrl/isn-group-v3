@@ -76,7 +76,7 @@ function TestimonialCard({
       {/* Stars */}
       <div style={{ display: "flex", gap: "4px" }}>
         {[...Array(t.stars)].map((_, si) => (
-          <Star key={si} size={19} fill="#00d4ff" color="#00d4ff" />
+          <Star key={si} size={19} fill={hovered ? "#f6a623" : "#00d4ff"} color={hovered ? "#f6a623" : "#00d4ff"} />
         ))}
       </div>
 
