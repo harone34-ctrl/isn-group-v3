@@ -251,9 +251,12 @@ export function NotreApproche() {
           paddingBottom: "80px",
           paddingLeft: "24px",
           paddingRight: "24px",
-          background: "linear-gradient(180deg, #0a0f1e 60%, #0d1526 100%)",
+          background: "linear-gradient(180deg, rgba(5,8,20,0.82) 0%, rgba(5,8,20,0.78) 100%), url('/imgfd4.jpg') center/cover no-repeat",
+          backgroundColor: "#0d1526",
           borderBottom: "1px solid rgba(0,212,255,0.15)",
           textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
         <div
